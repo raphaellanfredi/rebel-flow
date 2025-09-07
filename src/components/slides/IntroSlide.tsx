@@ -1,65 +1,97 @@
 import React from 'react';
-import { Users, TrendingUp, Target } from 'lucide-react';
+import { Users, TrendingUp, Target, CheckCircle } from 'lucide-react';
 
 const IntroSlide: React.FC = () => {
   const stats = [
-    { icon: Users, value: "200+", label: "Empresas Implementadas", color: "text-neon-red" },
-    { icon: TrendingUp, value: "5x", label: "ROI Médio", color: "text-neon-orange" },
-    { icon: Target, value: "85%", label: "Conversão Média", color: "text-green-400" },
+    { 
+      icon: Users, 
+      value: "200+", 
+      label: "Empresas Implementadas", 
+      color: "text-primary",
+      bgColor: "bg-primary/10"
+    },
+    { 
+      icon: TrendingUp, 
+      value: "5x", 
+      label: "ROI Médio", 
+      color: "text-secondary",
+      bgColor: "bg-secondary/10"
+    },
+    { 
+      icon: Target, 
+      value: "85%", 
+      label: "Conversão Média", 
+      color: "text-accent",
+      bgColor: "bg-accent/10"
+    },
+  ];
+
+  const credentials = [
+    "Criador do Método EVA",
+    "+50 Milhões em Vendas Geradas", 
+    "Expert em Automação Inteligente"
   ];
 
   return (
     <div className="slide-container">
       <div className="slide-content">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Side - Bio */}
-          <div className="space-y-6 animate-fade-slide-up">
-            <div className="space-y-4">
-              <h1 className="text-title font-bold text-neon-red uppercase">
-                Especialista em
-                <br />
-                <span className="text-white">IA Conversacional</span>
-              </h1>
+        <div className="intro-grid">
+          {/* Hero Section */}
+          <div className="hero-section">
+            <div className="space-y-6">
+              <div className="space-y-4">
+                <h1 className="text-title text-primary font-bold uppercase tracking-wide">
+                  Especialista em
+                  <br />
+                  <span className="text-foreground">IA Conversacional</span>
+                </h1>
+                
+                <div className="w-16 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+              </div>
               
-              <div className="w-24 h-1 bg-primary"></div>
-              
-              <p className="text-body text-muted-foreground leading-relaxed">
+              <p className="text-body text-muted-foreground leading-relaxed max-w-lg">
                 Desenvolvedor do Framework FODA que revolucionou como empresas 
                 vendem através de IA. Transformando conversas em conversões há mais de 5 anos.
               </p>
               
-              <div className="space-y-2">
-                <p className="text-sm text-primary font-medium">✓ Criador do Método EVA</p>
-                <p className="text-sm text-primary font-medium">✓ +50 Milhões em Vendas Geradas</p>
-                <p className="text-sm text-primary font-medium">✓ Expert em Automação Inteligente</p>
+              <div className="credentials-list">
+                {credentials.map((credential, index) => (
+                  <div key={index} className="credential-item">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                    <span>{credential}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Right Side - Stats */}
-          <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-center text-white mb-8">
-              NÚMEROS QUE <span className="text-neon-red">IMPRESSIONAM</span>
-            </h2>
+          {/* Stats Section */}
+          <div className="stats-section">
+            <div className="text-center mb-8">
+              <h2 className="text-subtitle font-bold text-foreground mb-2">
+                NÚMEROS QUE <span className="text-primary">IMPRESSIONAM</span>
+              </h2>
+              <div className="w-12 h-0.5 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+            </div>
             
-            <div className="grid gap-6">
+            <div className="space-y-6">
               {stats.map((stat, index) => {
                 const Icon = stat.icon;
                 return (
                   <div 
                     key={index}
-                    className="stat-card group hover:scale-105 transition-all duration-300"
-                    style={{ animationDelay: `${index * 0.2}s` }}
+                    className="stat-card group"
+                    style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     <div className="flex items-center gap-4">
-                      <div className={`p-3 rounded-lg bg-primary/20 ${stat.color}`}>
-                        <Icon className="w-8 h-8" />
+                      <div className={`stat-icon ${stat.bgColor}`}>
+                        <Icon className={`w-6 h-6 ${stat.color}`} />
                       </div>
-                      <div>
-                        <div className={`text-4xl font-black ${stat.color} animate-counter-up`}>
+                      <div className="flex-1">
+                        <div className={`stat-value ${stat.color}`}>
                           {stat.value}
                         </div>
-                        <div className="text-sm text-muted-foreground font-medium uppercase tracking-wide">
+                        <div className="stat-label text-muted-foreground">
                           {stat.label}
                         </div>
                       </div>
@@ -69,9 +101,9 @@ const IntroSlide: React.FC = () => {
               })}
             </div>
             
-            <div className="text-center pt-6">
-              <p className="text-sm text-neon-orange font-bold uppercase tracking-wider">
-                RESULTADOS COMPROVADOS EM MERCADO
+            <div className="text-center pt-6 border-t border-border/30">
+              <p className="text-sm text-secondary font-semibold uppercase tracking-wider">
+                Resultados Comprovados em Mercado
               </p>
             </div>
           </div>
