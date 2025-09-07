@@ -58,18 +58,18 @@ const CTAConsultingSlide: React.FC = () => {
               </p>
 
               {/* Value Stack */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-                <div className="bg-primary/10 border border-primary/30 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-primary">R$ 5.000</div>
-                  <div className="text-sm text-primary-foreground">Análise de funil</div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 mt-6 md:mt-8">
+                <div className="bg-primary/10 border border-primary/30 rounded-lg p-3 md:p-4">
+                  <div className="text-lg md:text-2xl font-bold text-primary">R$ 5.000</div>
+                  <div className="text-xs md:text-sm text-primary-foreground">Análise de funil</div>
                 </div>
-                <div className="bg-secondary/10 border border-secondary/30 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-secondary">R$ 8.000</div>
-                  <div className="text-sm text-white">Estratégia personalizada</div>
+                <div className="bg-secondary/10 border border-secondary/30 rounded-lg p-3 md:p-4">
+                  <div className="text-lg md:text-2xl font-bold text-secondary">R$ 8.000</div>
+                  <div className="text-xs md:text-sm text-white">Estratégia personalizada</div>
                 </div>
-                <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-green-400">R$ 3.000</div>
-                  <div className="text-sm text-green-300">Roadmap implementação</div>
+                <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-3 md:p-4">
+                  <div className="text-lg md:text-2xl font-bold text-green-400">R$ 3.000</div>
+                  <div className="text-xs md:text-sm text-green-300">Roadmap implementação</div>
                 </div>
               </div>
 
@@ -130,11 +130,6 @@ const CTAConsultingSlide: React.FC = () => {
           </div>
         </div>
 
-        {/* Floating Elements */}
-        <div className="absolute top-20 left-20 text-4xl animate-pulse opacity-50">⚡</div>
-        <div className="absolute top-40 right-20 text-4xl animate-pulse opacity-50" style={{ animationDelay: '0.5s' }}>🔥</div>
-        <div className="absolute bottom-20 left-32 text-4xl animate-pulse opacity-50" style={{ animationDelay: '1s' }}>💎</div>
-        <div className="absolute bottom-40 right-32 text-4xl animate-pulse opacity-50" style={{ animationDelay: '1.5s' }}>🚀</div>
       </div>
     </div>
   );

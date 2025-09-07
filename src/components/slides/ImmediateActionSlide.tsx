@@ -48,51 +48,51 @@ const ImmediateActionSlide: React.FC = () => {
               className={`bg-card/50 border-l-4 ${example.color} rounded-lg p-6 animate-fade-slide-up`}
               style={{ animationDelay: `${index * 0.3}s` }}
             >
-              <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 items-center">
                 {/* Header */}
                 <div className="lg:col-span-4 mb-4">
-                  <h3 className="text-xl font-bold text-white uppercase tracking-wide text-center">
+                  <h3 className="text-lg md:text-xl font-bold text-white uppercase tracking-wide text-center">
                     {example.title}
                   </h3>
                 </div>
 
                 {/* Problem */}
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-red-400 text-xl">❗</span>
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-red-400 text-lg md:text-xl">❗</span>
                   </div>
-                  <h4 className="font-bold text-red-400 mb-2">PROBLEMA</h4>
-                  <p className="text-sm text-red-300 italic">"{example.problem}"</p>
+                  <h4 className="font-bold text-red-400 mb-2 text-sm md:text-base">PROBLEMA</h4>
+                  <p className="text-xs md:text-sm text-red-300 italic">"{example.problem}"</p>
                 </div>
 
                 {/* Arrow */}
                 <div className="text-center">
-                  <Zap className="w-8 h-8 text-neon-orange mx-auto animate-pulse" />
+                  <Zap className="w-6 h-6 md:w-8 md:h-8 text-neon-orange mx-auto animate-pulse" />
                 </div>
 
                 {/* Solution */}
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <Target className="w-6 h-6 text-blue-400" />
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Target className="w-5 h-5 md:w-6 md:h-6 text-blue-400" />
                   </div>
-                  <h4 className="font-bold text-blue-400 mb-2">SOLUÇÃO EVA</h4>
-                  <p className="text-sm text-blue-300 italic">"{example.solution}"</p>
+                  <h4 className="font-bold text-blue-400 mb-2 text-sm md:text-base">SOLUÇÃO EVA</h4>
+                  <p className="text-xs md:text-sm text-blue-300 italic">"{example.solution}"</p>
                 </div>
 
                 {/* Action */}
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-green-400 text-xl">🎯</span>
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-green-400 text-lg md:text-xl">🎯</span>
                   </div>
-                  <h4 className="font-bold text-green-400 mb-2">AÇÃO</h4>
-                  <p className="text-sm text-green-300 italic font-bold">"{example.action}"</p>
+                  <h4 className="font-bold text-green-400 mb-2 text-sm md:text-base">AÇÃO</h4>
+                  <p className="text-xs md:text-sm text-green-300 italic font-bold">"{example.action}"</p>
                 </div>
 
                 {/* Timing */}
                 <div className="lg:col-span-4 text-center mt-4">
-                  <div className="inline-flex items-center gap-2 bg-primary/20 border border-primary/50 rounded-lg px-4 py-2">
-                    <Clock className="w-5 h-5 text-primary" />
-                    <span className="text-primary font-bold">
+                  <div className="inline-flex items-center gap-2 bg-primary/20 border border-primary/50 rounded-lg px-3 md:px-4 py-2">
+                    <Clock className="w-4 h-4 md:w-5 md:h-5 text-primary" />
+                    <span className="text-primary font-bold text-sm md:text-base">
                       Tempo total: {example.timing}
                     </span>
                   </div>

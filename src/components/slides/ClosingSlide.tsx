@@ -11,11 +11,11 @@ const ClosingSlide: React.FC = () => {
       </div>
 
       <div className="slide-content text-center relative z-10 space-y-16">
-        {/* EVA Brand - Large and Impactful */}
+        {/* Main Brand - EVA Removed */}
         <div className="animate-fade-slide-up">
           <div className="relative inline-block">
-            <h1 className="text-9xl font-black text-primary animate-pulse-glow tracking-wider">
-              EVA
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-primary animate-pulse-glow tracking-wider">
+              TRANSFORMAÇÃO
             </h1>
             {/* Glow Effect Around Text */}
             <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl scale-150 -z-10"></div>
@@ -23,8 +23,8 @@ const ClosingSlide: React.FC = () => {
         </div>
 
         {/* Main Tagline */}
-        <div className="space-y-8 animate-fade-slide-up" style={{ animationDelay: '0.5s' }}>
-          <h1 className="text-hero font-black text-white leading-none">
+        <div className="space-y-6 md:space-y-8 animate-fade-slide-up" style={{ animationDelay: '0.5s' }}>
+          <h1 className="text-4xl md:text-6xl lg:text-hero font-black text-white leading-none">
             IA que <span className="text-neon-red">NUNCA</span> falha,
             <br />
             <span className="text-neon-red">NUNCA</span> falta,
@@ -60,7 +60,7 @@ const ClosingSlide: React.FC = () => {
           <div className="w-32 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto"></div>
           
           <div className="text-sm text-muted-foreground space-y-2">
-            <p>Desenvolvido com 🔥 pela equipe EVA</p>
+            <p>Desenvolvido com 🔥 pela equipe de IA</p>
             <p className="text-xs opacity-60">Transformando conversas em conversões desde 2019</p>
           </div>
           
@@ -80,25 +80,6 @@ const ClosingSlide: React.FC = () => {
           </div>
         </div>
 
-        {/* Floating Elements for Visual Interest */}
-        <div className="absolute top-20 left-20 text-2xl opacity-20 animate-pulse">🤖</div>
-        <div className="absolute top-32 right-24 text-2xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}>⚡</div>
-        <div className="absolute bottom-32 left-32 text-2xl opacity-20 animate-pulse" style={{ animationDelay: '2s' }}>🚀</div>
-        <div className="absolute bottom-20 right-20 text-2xl opacity-20 animate-pulse" style={{ animationDelay: '0.5s' }}>💎</div>
-        
-        {/* Subtle Particles */}
-        {[...Array(8)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1 h-1 bg-primary/30 rounded-full animate-pulse"
-            style={{
-              left: `${10 + Math.random() * 80}%`,
-              top: `${10 + Math.random() * 80}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${2 + Math.random() * 3}s`
-            }}
-          />
-        ))}
       </div>
     </div>
   );

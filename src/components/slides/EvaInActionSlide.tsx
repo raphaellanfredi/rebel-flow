@@ -84,8 +84,8 @@ const EvaInActionSlide: React.FC = () => {
 
         <div className="max-w-4xl mx-auto">
           {/* Chat Interface */}
-          <div className="bg-card/80 backdrop-blur-sm border border-border rounded-xl p-6 mb-8">
-            <div className="h-96 overflow-y-auto space-y-4">
+          <div className="bg-card/80 backdrop-blur-sm border border-border rounded-xl p-4 md:p-6 mb-6 md:mb-8">
+            <div className="h-64 md:h-80 lg:h-96 overflow-y-auto space-y-3 md:space-y-4">
               {demoSteps.map((step) => (
                 <ChatBubble 
                   key={step.step} 
@@ -97,65 +97,65 @@ const EvaInActionSlide: React.FC = () => {
           </div>
 
           {/* Framework FODA Breakdown */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-6 md:mb-8">
             <div className="stat-card bg-red-500/10 border-red-500/30">
               <div className="text-center">
-                <div className="text-2xl font-bold text-red-400 mb-2">F</div>
-                <div className="text-sm text-red-300">FOCO aplicado</div>
+                <div className="text-xl md:text-2xl font-bold text-red-400 mb-2">F</div>
+                <div className="text-xs md:text-sm text-red-300">FOCO aplicado</div>
                 <div className="text-xs text-muted-foreground mt-1">Pergunta qualificadora</div>
               </div>
             </div>
 
             <div className="stat-card bg-orange-500/10 border-orange-500/30">
               <div className="text-center">
-                <div className="text-2xl font-bold text-orange-400 mb-2">O</div>
-                <div className="text-sm text-orange-300">OPORTUNIDADE</div>
+                <div className="text-xl md:text-2xl font-bold text-orange-400 mb-2">O</div>
+                <div className="text-xs md:text-sm text-orange-300">OPORTUNIDADE</div>
                 <div className="text-xs text-muted-foreground mt-1">Cliente R$ 800k</div>
               </div>
             </div>
 
             <div className="stat-card bg-yellow-500/10 border-yellow-500/30">
               <div className="text-center">
-                <div className="text-2xl font-bold text-yellow-400 mb-2">D</div>
-                <div className="text-sm text-yellow-300">DECISÃO</div>
+                <div className="text-xl md:text-2xl font-bold text-yellow-400 mb-2">D</div>
+                <div className="text-xs md:text-sm text-yellow-300">DECISÃO</div>
                 <div className="text-xs text-muted-foreground mt-1">EVA Premium</div>
               </div>
             </div>
 
             <div className="stat-card bg-green-500/10 border-green-500/30">
               <div className="text-center">
-                <div className="text-2xl font-bold text-green-400 mb-2">A</div>
-                <div className="text-sm text-green-300">AÇÃO</div>
+                <div className="text-xl md:text-2xl font-bold text-green-400 mb-2">A</div>
+                <div className="text-xs md:text-sm text-green-300">AÇÃO</div>
                 <div className="text-xs text-muted-foreground mt-1">Demo agendada</div>
               </div>
             </div>
           </div>
 
           {/* Metrics Sidebar */}
-          <div className="bg-muted/10 border border-muted/30 rounded-lg p-6">
-            <h3 className="text-lg font-bold text-white text-center mb-6">
+          <div className="bg-muted/10 border border-muted/30 rounded-lg p-4 md:p-6">
+            <h3 className="text-base md:text-lg font-bold text-white text-center mb-4 md:mb-6">
               MÉTRICAS EM TEMPO REAL
             </h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 text-center">
               <div>
-                <div className="text-3xl font-black text-green-400 animate-counter-up">23s</div>
-                <div className="text-sm text-green-300">Tempo total</div>
+                <div className="text-2xl md:text-3xl font-black text-green-400 animate-counter-up">23s</div>
+                <div className="text-xs md:text-sm text-green-300">Tempo total</div>
               </div>
               
               <div>
-                <div className="text-3xl font-black text-neon-orange animate-counter-up">6</div>
-                <div className="text-sm text-orange-300">Mensagens apenas</div>
+                <div className="text-2xl md:text-3xl font-black text-neon-orange animate-counter-up">6</div>
+                <div className="text-xs md:text-sm text-orange-300">Mensagens apenas</div>
               </div>
               
               <div>
-                <div className="text-3xl font-black text-neon-red animate-counter-up">1</div>
-                <div className="text-sm text-red-300">Demo agendada</div>
+                <div className="text-2xl md:text-3xl font-black text-neon-red animate-counter-up">1</div>
+                <div className="text-xs md:text-sm text-red-300">Demo agendada</div>
               </div>
               
               <div>
-                <div className="text-3xl font-black text-blue-400 animate-counter-up">100%</div>
-                <div className="text-sm text-blue-300">Taxa conversão</div>
+                <div className="text-2xl md:text-3xl font-black text-blue-400 animate-counter-up">100%</div>
+                <div className="text-xs md:text-sm text-blue-300">Taxa conversão</div>
               </div>
             </div>
           </div>
