@@ -1,7 +1,7 @@
 import Presentation from '@/components/Presentation';
 
 const Index = () => {
-  return <Presentation autoPlay={false} autoPlayInterval={30000} />;
+  return <Presentation autoPlay={false} />;
 };
 
 export default Index;
