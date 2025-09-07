@@ -1,5 +1,5 @@
 import React from 'react';
-import evaLogo from '@/assets/eva-logo-white.png';
+// EVA logo removed - using text instead
 
 const ClosingSlide: React.FC = () => {
   return (
@@ -11,15 +11,13 @@ const ClosingSlide: React.FC = () => {
       </div>
 
       <div className="slide-content text-center relative z-10 space-y-16">
-        {/* EVA Logo - Large and Impactful */}
+        {/* EVA Brand - Large and Impactful */}
         <div className="animate-fade-slide-up">
           <div className="relative inline-block">
-            <img 
-              src={evaLogo} 
-              alt="EVA Inteligência" 
-              className="h-40 w-auto mx-auto filter drop-shadow-2xl animate-pulse-glow" 
-            />
-            {/* Glow Effect Around Logo */}
+            <h1 className="text-9xl font-black text-primary animate-pulse-glow tracking-wider">
+              EVA
+            </h1>
+            {/* Glow Effect Around Text */}
             <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl scale-150 -z-10"></div>
           </div>
         </div>

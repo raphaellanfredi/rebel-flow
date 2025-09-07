@@ -6,7 +6,7 @@ const EvaVsInternSlide: React.FC = () => {
     { category: "Disponibilidade", human: "40h/sem", eva: "168h/sem", description: "24/7 sem pausas" },
     { category: "Performance", human: "Variável", eva: "Constante", description: "Sempre no máximo" },
     { category: "Custo", human: "R$ 2.000+", eva: "R$ 777+", description: "80% mais barato" },
-    { category: "Resultado", human: "30%", eva: "85%", description: "3x mais conversões" },
+    { category: "Resultado", human: "30 vendas/mês", eva: "150+ vendas/mês", description: "5x mais vendas" },
   ];
 
   return (

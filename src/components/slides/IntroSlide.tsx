@@ -28,7 +28,7 @@ const IntroSlide: React.FC = () => {
 
   const credentials = [
     "Criador do Método FODA",
-    "+50 Milhões em Vendas Geradas", 
+    "+20 Milhões em Vendas Geradas", 
     "Expert em Automação Inteligente"
   ];
 
