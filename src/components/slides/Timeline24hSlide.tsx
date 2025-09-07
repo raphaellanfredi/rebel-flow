@@ -1,8 +1,8 @@
 import React from 'react';
 
 const Timeline24hSlide: React.FC = () => {
-  const salesHours = [2, 7, 14, 18, 21, 23]; // Hours when sales typically happen
-  const competitorHours = [9, 10, 11, 14, 15, 16, 17]; // Business hours only
+  const salesHours = [1, 3, 6, 8, 10, 12, 14, 16, 18, 19, 21, 22, 23]; // EVA: 24/7 sales opportunities (13 total)
+  const competitorHours = [9, 11, 14, 15, 16, 17]; // Concorrência: business hours only (6 total)
 
   return (
     <div className="slide-container">
@@ -134,10 +134,10 @@ const Timeline24hSlide: React.FC = () => {
 
         <div className="text-center mt-16 space-y-4">
           <p className="text-2xl font-bold text-neon-red uppercase tracking-wide">
-            EVA captura <span className="text-neon-orange">71%</span> mais vendas
+            EVA captura <span className="text-neon-orange">117%</span> mais vendas
           </p>
           <p className="text-muted-foreground">
-            Enquanto a concorrência dorme, EVA está vendendo
+            Enquanto a concorrência dorme (18h-8h), EVA continua vendendo
           </p>
           
           <div className="inline-flex items-center gap-3 bg-primary/20 border border-primary/50 rounded-lg px-6 py-3 mt-6">
