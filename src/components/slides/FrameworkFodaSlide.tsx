@@ -2,119 +2,104 @@ import React from 'react';
 import { Target, Clock, Zap, Rocket } from 'lucide-react';
 
 const FrameworkFodaSlide: React.FC = () => {
-  const fodaElements = [
-    {
-      letter: "F",
-      title: "FOCO LASER",
-      description: "Conversa direcionada ao objetivo",
-      icon: Target,
-      color: "from-red-500 to-red-600",
-      delay: 0
-    },
-    {
-      letter: "O", 
-      title: "OPORTUNIDADE 24/7",
-      description: "Vendas acontecem a qualquer hora",
-      icon: Clock,
-      color: "from-orange-500 to-orange-600",
-      delay: 0.3
-    },
-    {
-      letter: "D",
-      title: "DECISÃO INSTANTÂNEA", 
-      description: "Respostas inteligentes em segundos",
-      icon: Zap,
-      color: "from-yellow-500 to-yellow-600",
-      delay: 0.6
-    },
-    {
-      letter: "A",
-      title: "AÇÃO IMEDIATA",
-      description: "Conduz direto para a conversão",
-      icon: Rocket,
-      color: "from-green-500 to-green-600",
-      delay: 0.9
-    }
-  ];
-
   return (
     <div className="slide-container">
       <div className="slide-content">
-        <div className="text-center mb-16">
-          <div className="foda-word mb-8">FODA</div>
+        {/* Título */}
+        <div className="text-center mb-20">
+          <h1 className="text-title font-black text-white mb-4">
+            METODOLOGIA <span className="text-neon-red">PROPRIETÁRIA</span>
+          </h1>
           <p className="text-xl text-muted-foreground">
-            Framework para Domínio Absoluto
+            O framework que separa amadores de profissionais
           </p>
         </div>
 
-        {/* Central Logo */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-br from-primary to-secondary border-4 border-primary-glow shadow-lg shadow-red-500/50 animate-pulse-glow">
-            <span className="text-4xl font-black text-white">FODA</span>
+        {/* PALAVRA FODA GIGANTE */}
+        <div className="text-center mb-16">
+          <div className="relative inline-block">
+            <div 
+              className="font-black text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary"
+              style={{ 
+                fontSize: 'clamp(8rem, 20vw, 16rem)',
+                lineHeight: '0.8',
+                letterSpacing: '0.1em',
+                textShadow: '0 0 100px rgba(255, 0, 0, 0.5)'
+              }}
+            >
+              FODA
+            </div>
+            {/* Efeito de brilho */}
+            <div 
+              className="absolute inset-0 font-black text-primary/20 blur-sm"
+              style={{ 
+                fontSize: 'clamp(8rem, 20vw, 16rem)',
+                lineHeight: '0.8',
+                letterSpacing: '0.1em'
+              }}
+            >
+              FODA
+            </div>
           </div>
         </div>
 
-        {/* FODA Grid */}
-        <div className="foda-grid max-w-6xl mx-auto">
-          {fodaElements.map((element, index) => {
-            const Icon = element.icon;
-            return (
-              <div 
-                key={index}
-                className="foda-item animate-fade-slide-up"
-                style={{ animationDelay: `${element.delay}s` }}
-              >
-                <div className="flex items-start gap-4">
-                  {/* Letter Badge */}
-                  <div className={`flex-shrink-0 w-16 h-16 rounded-lg bg-gradient-to-br ${element.color} flex items-center justify-center shadow-lg`}>
-                    <span className="text-2xl font-black text-white">
-                      {element.letter}
-                    </span>
-                  </div>
+        {/* Grid dos 4 pilares */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          {/* F - FOCO */}
+          <div className="group text-center">
+            <div className="mb-6 mx-auto w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary/30 transition-all duration-300">
+              <Target className="w-10 h-10 text-primary" />
+            </div>
+            <div className="text-6xl font-black text-primary mb-4">F</div>
+            <h3 className="text-xl font-bold text-white mb-3">FOCO LASER</h3>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              Uma missão clara: converter lead em reunião. Sem dispersão, sem papo furado.
+            </p>
+          </div>
 
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-3">
-                      <Icon className="w-6 h-6 text-primary" />
-                      <h3 className="text-xl font-bold text-white uppercase tracking-wide">
-                        {element.title}
-                      </h3>
-                    </div>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {element.description}
-                    </p>
-                  </div>
-                </div>
+          {/* O - OPORTUNIDADE */}
+          <div className="group text-center">
+            <div className="mb-6 mx-auto w-20 h-20 bg-secondary/20 rounded-full flex items-center justify-center group-hover:bg-secondary/30 transition-all duration-300">
+              <Clock className="w-10 h-10 text-secondary" />
+            </div>
+            <div className="text-6xl font-black text-secondary mb-4">O</div>
+            <h3 className="text-xl font-bold text-white mb-3">OPORTUNIDADE 24/7</h3>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              Nunca perde uma chance. Enquanto concorrência dorme, EVA vende.
+            </p>
+          </div>
 
-                {/* Connection Lines */}
-                {index < 3 && (
-                  <div className="absolute -bottom-6 left-1/2 w-0.5 h-12 bg-gradient-to-b from-primary to-transparent hidden md:block"></div>
-                )}
-              </div>
-            );
-          })}
+          {/* D - DECISÃO */}
+          <div className="group text-center">
+            <div className="mb-6 mx-auto w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary/30 transition-all duration-300">
+              <Zap className="w-10 h-10 text-primary" />
+            </div>
+            <div className="text-6xl font-black text-primary mb-4">D</div>
+            <h3 className="text-xl font-bold text-white mb-3">DECISÃO INSTANTÂNEA</h3>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              Qualifica na primeira pergunta. Sem dúvidas, sem hesitação.
+            </p>
+          </div>
+
+          {/* A - AÇÃO */}
+          <div className="group text-center">
+            <div className="mb-6 mx-auto w-20 h-20 bg-secondary/20 rounded-full flex items-center justify-center group-hover:bg-secondary/30 transition-all duration-300">
+              <Rocket className="w-10 h-10 text-secondary" />
+            </div>
+            <div className="text-6xl font-black text-secondary mb-4">A</div>
+            <h3 className="text-xl font-bold text-white mb-3">AÇÃO IMEDIATA</h3>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              Fecha antes da concorrência. Agenda reunião em 3 mensagens.
+            </p>
+          </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-16 space-y-4">
-          <p className="text-2xl font-bold text-neon-red uppercase tracking-wide">
-            4 pilares para <span className="text-neon-orange">SUCESSO GARANTIDO</span>
+        {/* Call to Action */}
+        <div className="text-center mt-16">
+          <p className="text-2xl font-bold text-white mb-4">
+            Não é chatbot. É <span className="text-neon-red">MÁQUINA DE VENDAS</span>
           </p>
-          <p className="text-muted-foreground">
-            Cada elemento trabalhando em sinergia para maximizar conversões
-          </p>
-        </div>
-
-        {/* Framework Connections */}
-        <div className="hidden lg:block absolute inset-0 pointer-events-none">
-          <svg className="w-full h-full">
-            <defs>
-              <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.6" />
-                <stop offset="100%" stopColor="hsl(var(--secondary))" stopOpacity="0.3" />
-              </linearGradient>
-            </defs>
-            {/* Add subtle connection lines between elements */}
-          </svg>
+          <div className="w-32 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
         </div>
       </div>
     </div>
