@@ -6,8 +6,8 @@ const DecisionTreeSlide: React.FC = () => {
     <div className="slide-container">
       <div className="slide-content">
         <div className="text-center mb-16">
-          <h1 className="text-title font-black text-neon-red uppercase">
-            ÁRVORE DE <span className="text-neon-orange">DECISÃO</span>
+          <h1 className="text-title font-black text-foreground uppercase">
+            ÁRVORE DE <span className="text-primary">DECISÃO</span>
           </h1>
           <p className="text-body text-muted-foreground">
             Fluxo de qualificação e conversão
@@ -23,8 +23,8 @@ const DecisionTreeSlide: React.FC = () => {
             </div>
           </div>
 
-          {/* Split Path */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Split Path - Left Aligned */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Human Path */}
             <div className="space-y-6 animate-fade-slide-up">
               <div className="text-center">
@@ -128,8 +128,8 @@ const DecisionTreeSlide: React.FC = () => {
         </div>
 
         <div className="text-center mt-16 space-y-4">
-          <p className="text-2xl font-bold text-neon-red uppercase tracking-wide">
-            EVA é <span className="text-neon-orange">10x MAIS RÁPIDA</span>
+          <p className="text-2xl font-bold text-foreground uppercase tracking-wide">
+            EVA é <span className="text-primary">5x MAIS RÁPIDA</span>
           </p>
           <p className="text-muted-foreground">
             E 3x mais eficiente na conversão

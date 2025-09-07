@@ -27,7 +27,7 @@ const IntroSlide: React.FC = () => {
   ];
 
   const credentials = [
-    "Criador do Método EVA",
+    "Criador do Método FODA",
     "+50 Milhões em Vendas Geradas", 
     "Expert em Automação Inteligente"
   ];
@@ -40,19 +40,19 @@ const IntroSlide: React.FC = () => {
           <div className="hero-section">
             <div className="space-y-6">
               <div className="space-y-4">
-                <h1 className="text-title text-primary font-bold uppercase tracking-wide">
+                <h1 className="text-title text-foreground font-bold uppercase tracking-wide">
                   Especialista em
                   <br />
-                  <span className="text-foreground">IA Conversacional</span>
+                  <span className="text-primary">IA Conversacional</span>
                 </h1>
                 
                 <div className="w-16 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
               </div>
               
-              <p className="text-body text-muted-foreground leading-relaxed max-w-lg">
-                Desenvolvedor do Framework FODA que revolucionou como empresas 
-                vendem através de IA. Transformando conversas em conversões há mais de 5 anos.
-              </p>
+                <p className="text-body text-muted-foreground leading-relaxed max-w-lg">
+                  Desenvolvedor do <span className="text-primary font-semibold">Método FODA</span> que revolucionou como empresas 
+                  vendem através de IA. Transformando conversas em conversões há mais de 5 anos.
+                </p>
               
               <div className="credentials-list">
                 {credentials.map((credential, index) => (

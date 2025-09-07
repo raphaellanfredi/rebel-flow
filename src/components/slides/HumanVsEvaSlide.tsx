@@ -23,13 +23,14 @@ const HumanVsEvaSlide: React.FC = () => {
       <div className="slide-content">
         {/* Title */}
         <div className="text-center mb-16">
-          <h1 className="text-title font-black text-white uppercase mb-4">
-            A <span className="text-neon-red">VERDADE</span> que te esconderam
+          <h1 className="text-title font-black text-foreground uppercase mb-4">
+            A <span className="text-primary">VERDADE</span> que te esconderam
           </h1>
         </div>
 
-        {/* VS Layout */}
-        <div className="vs-layout max-w-6xl mx-auto">
+        {/* VS Layout - Centralized */}
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center justify-center">
           {/* Human Side */}
           <div className="vs-side vs-human animate-fade-slide-up">
             <div className="text-center mb-8">
@@ -119,10 +120,11 @@ const HumanVsEvaSlide: React.FC = () => {
             A escolha é <span className="text-neon-orange">ÓBVIA</span>
           </p>
           <p className="text-muted-foreground mt-2">
-            10x mais barato, 3x mais eficiente
+            5x mais barato, 3x mais eficiente
           </p>
         </div>
-      </div>
+        </div>
+        </div>
     </div>
   );
 };

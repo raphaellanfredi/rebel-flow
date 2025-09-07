@@ -33,8 +33,8 @@ const ImmediateActionSlide: React.FC = () => {
     <div className="slide-container">
       <div className="slide-content">
         <div className="text-center mb-16">
-          <h1 className="text-title font-black text-neon-red uppercase">
-            AÇÃO <span className="text-neon-orange">IMEDIATA</span>
+          <h1 className="text-title font-black text-foreground uppercase">
+            AÇÃO <span className="text-primary">IMEDIATA</span>
           </h1>
           <p className="text-body text-muted-foreground">
             EVA transforma conversas em conversões em segundos
@@ -103,8 +103,8 @@ const ImmediateActionSlide: React.FC = () => {
         </div>
 
         <div className="text-center mt-16 space-y-6">
-          <p className="text-3xl font-black text-neon-red uppercase tracking-wide">
-            ISSO É <span className="text-neon-orange">MÁQUINA DE VENDAS</span>
+          <p className="text-3xl font-black text-foreground uppercase tracking-wide">
+            ISSO É <span className="text-primary">MÁQUINA DE VENDAS</span>
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -131,7 +131,7 @@ const ImmediateActionSlide: React.FC = () => {
           </div>
 
           <p className="text-muted-foreground">
-            Enquanto humanos perdem tempo, EVA está <span className="text-neon-red font-bold">FECHANDO VENDAS</span>
+            Enquanto humanos perdem tempo, EVA está <span className="text-primary font-bold">FECHANDO VENDAS</span>
           </p>
         </div>
       </div>

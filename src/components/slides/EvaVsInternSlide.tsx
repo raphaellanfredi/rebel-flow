@@ -5,7 +5,7 @@ const EvaVsInternSlide: React.FC = () => {
     { category: "Conhecimento", human: "0%", eva: "100%", description: "EVA nasce sabendo tudo" },
     { category: "Disponibilidade", human: "40h/sem", eva: "168h/sem", description: "24/7 sem pausas" },
     { category: "Performance", human: "Variável", eva: "Constante", description: "Sempre no máximo" },
-    { category: "Custo", human: "R$ 2.000+", eva: "R$ 300", description: "85% mais barato" },
+    { category: "Custo", human: "R$ 2.000+", eva: "R$ 777+", description: "80% mais barato" },
     { category: "Resultado", human: "30%", eva: "85%", description: "3x mais conversões" },
   ];
 
@@ -13,8 +13,8 @@ const EvaVsInternSlide: React.FC = () => {
     <div className="slide-container">
       <div className="slide-content">
         <div className="text-center mb-12">
-          <h1 className="text-title font-black text-neon-red uppercase">
-            EVA vs <span className="text-neon-orange">ESTAGIÁRIO</span>
+          <h1 className="text-title font-black text-foreground uppercase">
+            EVA vs <span className="text-primary">ESTAGIÁRIO</span>
           </h1>
           <p className="text-body text-muted-foreground mt-4">
             Comparação detalhada: máquina vs humano
@@ -58,7 +58,7 @@ const EvaVsInternSlide: React.FC = () => {
         </div>
 
         <div className="text-center mt-16">
-          <p className="text-2xl font-bold text-neon-orange uppercase tracking-wide">
+          <p className="text-2xl font-bold text-primary uppercase tracking-wide">
             EVA: Conhecimento máximo desde o dia 1
           </p>
         </div>

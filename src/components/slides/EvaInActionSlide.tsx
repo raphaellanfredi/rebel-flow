@@ -74,8 +74,8 @@ const EvaInActionSlide: React.FC = () => {
     <div className="slide-container">
       <div className="slide-content">
         <div className="text-center mb-12">
-          <h1 className="text-title font-black text-neon-red uppercase">
-            EVA EM <span className="text-neon-orange">AÇÃO</span>
+          <h1 className="text-title font-black text-foreground uppercase">
+            EVA EM <span className="text-primary">AÇÃO</span>
           </h1>
           <p className="text-body text-muted-foreground">
             Demo real: de interesse à conversão em 23 segundos
@@ -162,8 +162,8 @@ const EvaInActionSlide: React.FC = () => {
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-2xl font-bold text-neon-red uppercase tracking-wide">
-            FRAMEWORK FODA <span className="text-neon-orange">FUNCIONANDO</span>
+          <p className="text-2xl font-bold text-foreground uppercase tracking-wide">
+            MÉTODO FODA <span className="text-primary">FUNCIONANDO</span>
           </p>
           <p className="text-muted-foreground mt-2">
             De desconhecido para lead qualificado em menos de 30 segundos

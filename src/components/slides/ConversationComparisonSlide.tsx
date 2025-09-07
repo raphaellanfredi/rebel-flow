@@ -39,8 +39,8 @@ const ConversationComparisonSlide: React.FC = () => {
     <div className="slide-container">
       <div className="slide-content">
         <div className="text-center mb-12">
-          <h1 className="text-title font-black text-neon-red uppercase">
-            CONVERSA DISPERSA vs <span className="text-neon-orange">FOCADA</span>
+          <h1 className="text-title font-black text-foreground uppercase">
+            CONVERSA DISPERSA vs <span className="text-primary">FOCADA</span>
           </h1>
           <p className="text-body text-muted-foreground">
             A diferença que multiplica vendas
@@ -90,7 +90,7 @@ const ConversationComparisonSlide: React.FC = () => {
             <div className="text-center space-y-2">
               <div className="flex items-center justify-center gap-2 text-green-400">
                 <Clock className="w-5 h-5" />
-                <span className="font-bold">30 segundos</span>
+                <span className="font-bold">1 minuto</span>
               </div>
               <p className="text-sm text-green-300">Demo agendada ✅</p>
             </div>
