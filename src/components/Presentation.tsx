@@ -20,6 +20,7 @@ import DemoSetupSlide from './slides/DemoSetupSlide';
 import EvaInActionSlide from './slides/EvaInActionSlide';
 import CasesResultsSlide from './slides/CasesResultsSlide';
 import CTAConsultingSlide from './slides/CTAConsultingSlide';
+import PricingSlide from './slides/PricingSlide';
 import ClosingSlide from './slides/ClosingSlide';
 
 const slides = [
@@ -39,7 +40,8 @@ const slides = [
   { id: 14, component: EvaInActionSlide, title: "EVA em Ação" },
   { id: 15, component: CasesResultsSlide, title: "Cases - Números" },
   { id: 16, component: CTAConsultingSlide, title: "CTA Consultoria" },
-  { id: 17, component: ClosingSlide, title: "Fechamento" },
+  { id: 17, component: PricingSlide, title: "Planos EVA" },
+  { id: 18, component: ClosingSlide, title: "Fechamento" },
 ];
 
 interface PresentationProps {

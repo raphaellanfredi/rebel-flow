@@ -105,9 +105,9 @@ const HumanVsEvaSlide: React.FC = () => {
             </div>
 
             <div className="mt-8 text-center">
-              <div className="text-4xl font-bold text-green-400">
+              <div className="text-4xl font-black text-green-400">
                 R$ 777+
-                <div className="text-sm font-normal text-muted-foreground">POR MÊS</div>
+                <div className="text-sm font-normal">POR MÊS</div>
               </div>
             </div>
           </div>

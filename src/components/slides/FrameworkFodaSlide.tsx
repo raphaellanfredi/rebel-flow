@@ -41,11 +41,9 @@ const FrameworkFodaSlide: React.FC = () => {
     <div className="slide-container">
       <div className="slide-content">
         <div className="text-center mb-16">
-          <h1 className="text-title font-black text-neon-red uppercase mb-8">
-            FRAMEWORK <span className="text-neon-orange">FODA</span>
-          </h1>
-          <p className="text-body text-muted-foreground">
-            O método que multiplica vendas através de IA conversacional
+          <div className="foda-word mb-8">FODA</div>
+          <p className="text-xl text-muted-foreground">
+            Framework para Domínio Absoluto
           </p>
         </div>
 
