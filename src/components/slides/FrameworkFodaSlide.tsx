@@ -51,7 +51,7 @@ const FrameworkFodaSlide: React.FC = () => {
 
         {/* Central Logo */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-br from-primary to-secondary border-4 border-primary-glow shadow-glow animate-pulse-glow">
+          <div className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-br from-primary to-secondary border-4 border-primary-glow shadow-lg shadow-red-500/50 animate-pulse-glow">
             <span className="text-4xl font-black text-white">FODA</span>
           </div>
         </div>

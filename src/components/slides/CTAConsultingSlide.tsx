@@ -106,7 +106,7 @@ const CTAConsultingSlide: React.FC = () => {
 
           {/* Main CTA */}
           <div className="text-center space-y-6 animate-fade-slide-up" style={{ animationDelay: '1s' }}>
-            <Button className="btn-rebel text-2xl px-16 py-8 shadow-glow">
+            <Button className="btn-rebel text-2xl px-16 py-8 shadow-xl shadow-red-500/50">
               GARANTA SUA VAGA
             </Button>
             

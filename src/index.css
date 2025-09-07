@@ -84,7 +84,7 @@
   .btn-rebel {
     @apply bg-primary text-primary-foreground font-bold uppercase tracking-wider px-8 py-4 rounded-lg;
     @apply hover:scale-105 transition-all duration-300;
-    @apply shadow-lg hover:shadow-glow;
+    @apply shadow-lg hover:shadow-xl hover:shadow-red-500/50;
     @apply border border-primary-glow/20;
     animation: pulse-glow 2s infinite;
   }
@@ -92,7 +92,7 @@
   .btn-electric {
     @apply bg-secondary text-white font-bold uppercase tracking-wider px-8 py-4 rounded-lg;
     @apply hover:scale-105 transition-all duration-300;
-    @apply shadow-lg hover:shadow-electric;
+    @apply shadow-lg hover:shadow-xl hover:shadow-orange-500/50;
   }
   
   /* GRADIENT BACKGROUNDS */
@@ -167,7 +167,7 @@
   .foda-item {
     @apply p-6 rounded-lg border border-border bg-card/50 backdrop-blur-sm;
     @apply hover:scale-105 transition-all duration-300;
-    @apply hover:border-primary/50 hover:shadow-glow/20;
+    @apply hover:border-primary/50 hover:shadow-xl hover:shadow-red-500/20;
   }
   
   /* STATS CARDS */

@@ -60,7 +60,7 @@ const AgendaSlide: React.FC = () => {
                   style={{ animationDelay: `${index * 0.3}s` }}
                 >
                   {/* Timeline Dot */}
-                  <div className="absolute left-6 w-5 h-5 bg-primary rounded-full border-4 border-background shadow-glow"></div>
+                  <div className="absolute left-6 w-5 h-5 bg-primary rounded-full border-4 border-background shadow-lg shadow-red-500/50"></div>
                   
                   {/* Content Card */}
                   <div className={`stat-card border-l-4 ${item.color}`}>
