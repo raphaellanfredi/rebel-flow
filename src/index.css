@@ -155,12 +155,12 @@
   /* SLIDE LAYOUTS */
   .slide-container {
     @apply w-full h-screen flex items-center justify-center relative overflow-hidden;
-    padding: clamp(1rem, 4vw, 3rem);
+    padding: clamp(0.5rem, 1vw, 1rem);
     background: hsl(var(--background)); /* Pure black background */
   }
 
   .slide-content {
-    @apply w-full max-w-7xl mx-auto relative z-10;
+    @apply w-full max-w-full mx-auto relative z-10 px-4;
   }
 
   /* PROFESSIONAL GRID SYSTEM */

@@ -15,7 +15,7 @@ import FrameworkFodaSlide from './slides/FrameworkFodaSlide';
 import ConversationComparisonSlide from './slides/ConversationComparisonSlide';
 import Timeline24hSlide from './slides/Timeline24hSlide';
 import DecisionTreeSlide from './slides/DecisionTreeSlide';
-import ImmediateActionSlide from './slides/ImmediateActionSlide';
+
 import DemoSetupSlide from './slides/DemoSetupSlide';
 import EvaInActionSlide from './slides/EvaInActionSlide';
 import CasesResultsSlide from './slides/CasesResultsSlide';
@@ -35,7 +35,7 @@ const slides = [
   { id: 9, component: ConversationComparisonSlide, title: "Conversa Dispersa vs Focada" },
   { id: 10, component: Timeline24hSlide, title: "Timeline 24H" },
   { id: 11, component: DecisionTreeSlide, title: "Árvore de Decisão" },
-  { id: 12, component: ImmediateActionSlide, title: "Ação Imediata" },
+  
   { id: 13, component: DemoSetupSlide, title: "Setup Demo EVA" },
   { id: 14, component: EvaInActionSlide, title: "EVA em Ação" },
   { id: 15, component: CasesResultsSlide, title: "Cases - Números" },

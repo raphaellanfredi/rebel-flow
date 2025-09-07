@@ -8,7 +8,7 @@ const FrameworkFodaSlide: React.FC = () => {
         {/* Título */}
         <div className="text-center mb-20">
           <h1 className="text-title font-black text-white mb-4">
-            METODOLOGIA <span className="text-neon-red">PROPRIETÁRIA</span>
+            MÉTODO <span className="text-neon-red">EXCLUSIVO</span>
           </h1>
           <p className="text-xl text-muted-foreground">
             O framework que separa amadores de profissionais
