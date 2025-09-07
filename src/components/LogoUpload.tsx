@@ -95,10 +95,13 @@ export const LogoUpload: React.FC<LogoUploadProps> = ({ onLogoChange, currentLog
           <Button
             size="sm"
             variant="outline"
+            type="button"
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
-              fileInputRef.current?.click();
+              if (fileInputRef.current) {
+                fileInputRef.current.click();
+              }
             }}
           >
             Selecionar arquivo
@@ -109,6 +112,7 @@ export const LogoUpload: React.FC<LogoUploadProps> = ({ onLogoChange, currentLog
             accept="image/*"
             className="hidden"
             onChange={handleFileSelect}
+            style={{ display: 'none' }}
           />
         </div>
       )}
