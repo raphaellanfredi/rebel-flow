@@ -47,7 +47,7 @@ const PricingSlide: React.FC = () => {
           </div>
 
           {/* EVA PRO - RECOMENDADO */}
-          <div className="bg-card/80 backdrop-blur-sm border-2 border-primary rounded-xl p-8 relative transform scale-105">
+          <div className="bg-card/80 backdrop-blur-sm border-2 border-green-500 rounded-xl p-8 relative transform scale-105">
             <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
               <div className="bg-green-500 px-4 py-2 rounded-full flex items-center gap-2">
                 <Star className="w-4 h-4 text-white" />
@@ -90,7 +90,7 @@ const PricingSlide: React.FC = () => {
           </div>
 
           {/* EVA BLACK */}
-          <div className="bg-card/60 backdrop-blur-sm border border-secondary rounded-xl p-8 hover:border-secondary/50 transition-all">
+          <div className="bg-card/60 backdrop-blur-sm border border-white rounded-xl p-8 hover:border-white/70 transition-all">
             <h3 className="text-2xl font-bold text-white mb-4">EVA BLACK</h3>
             <div className="text-3xl font-black mb-6" style={{ color: '#FFD700' }}>
               R$ 3.510<span className="text-lg">/mês</span>
