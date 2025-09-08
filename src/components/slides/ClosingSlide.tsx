@@ -10,9 +10,9 @@ const ClosingSlide: React.FC = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
       </div>
 
-      <div className="slide-content text-center relative z-10 min-h-screen flex flex-col justify-between py-12">
+      <div className="slide-content text-center relative z-10 min-h-screen flex flex-col justify-center py-8 -mt-20">
         {/* Main Brand - EVA Removed */}
-        <div className="animate-fade-slide-up mb-12">
+        <div className="animate-fade-slide-up mb-8">
           <div className="relative inline-block">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-primary animate-pulse-glow tracking-wider">
               TRANSFORMAÇÃO
@@ -23,7 +23,7 @@ const ClosingSlide: React.FC = () => {
         </div>
 
         {/* Main Tagline */}
-        <div className="space-y-8 md:space-y-10 animate-fade-slide-up mb-16" style={{ animationDelay: '0.5s' }}>
+        <div className="space-y-8 md:space-y-10 animate-fade-slide-up mb-10" style={{ animationDelay: '0.5s' }}>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight">
             IA que <span className="text-green-400">NUNCA</span> falha,
             <br />
@@ -34,7 +34,7 @@ const ClosingSlide: React.FC = () => {
         </div>
 
         {/* Breaking Chains Message */}
-        <div className="space-y-8 animate-fade-slide-up mb-12" style={{ animationDelay: '1s' }}>
+        <div className="space-y-8 animate-fade-slide-up mb-8" style={{ animationDelay: '1s' }}>
           <div className="relative">
             <h2 className="text-2xl md:text-3xl font-bold text-neon-orange uppercase tracking-wider">
               QUEBRE ESSAS CORRENTES
@@ -49,11 +49,11 @@ const ClosingSlide: React.FC = () => {
         </div>
 
         {/* Contact Information - Discrete but Present */}
-        <div className="space-y-6 animate-fade-slide-up mt-auto" style={{ animationDelay: '1.5s' }}>
+        <div className="space-y-6 animate-fade-slide-up" style={{ animationDelay: '1.5s' }}>
           <div className="w-32 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto"></div>
           
           <div className="text-sm text-muted-foreground space-y-2">
-            <p>Desenvolvido com 🔥 pela equipe de IA</p>
+            <p>Desenvolvido com 🔥 pela 7AI</p>
             <p className="text-xs opacity-60">Transformando conversas em conversões desde 2019</p>
           </div>
           
