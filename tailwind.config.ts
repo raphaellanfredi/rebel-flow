@@ -2,7 +2,13 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: ['./src/**/*.{ts,tsx,js,jsx,html}'],
+  safelist: [
+    // adicione padrões de classes dinâmicas que seu app cria em runtime
+    { pattern: /bg-(red|green|orange)-\d{3}/ },
+    { pattern: /text-(red|green|orange)-\d{3}/ },
+    { pattern: /border-(red|green|orange)-\d{3}/ },
+  ],
   prefix: "",
   theme: {
     container: {
