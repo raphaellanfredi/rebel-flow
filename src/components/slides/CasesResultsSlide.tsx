@@ -176,8 +176,8 @@ const CasesResultsSlide: React.FC = () => {
           </div>
         </div>
 
-        <div className="text-center mt-16">
-          <p className="text-2xl font-bold text-neon-red uppercase tracking-wide">
+        <div className="text-center mt-12">
+          <p className="text-lg md:text-xl font-bold text-neon-red uppercase tracking-wide">
             MÉDIA <span className="text-neon-orange">3x ROI</span> POR SEMESTRE
           </p>
           <p className="text-muted-foreground mt-2">

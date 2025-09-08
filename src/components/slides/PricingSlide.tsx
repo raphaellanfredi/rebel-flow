@@ -50,8 +50,8 @@ const PricingSlide: React.FC = () => {
           <div className="bg-card/80 backdrop-blur-sm border-2 border-primary rounded-xl p-8 relative transform scale-105">
             <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
               <div className="bg-green-500 px-4 py-2 rounded-full flex items-center gap-2">
-                <Star className="w-4 h-4" />
-                <span className="text-sm font-bold">RECOMENDADO</span>
+                <Star className="w-4 h-4 text-white" />
+                <span className="text-sm font-bold text-white">RECOMENDADO</span>
               </div>
             </div>
             

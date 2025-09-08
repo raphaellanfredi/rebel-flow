@@ -22,15 +22,11 @@ const CTAConsultingSlide: React.FC = () => {
         <div className="text-center mb-16 space-y-6">
           {/* Breaking Chains Effect */}
           <div className="relative">
-            <h1 className="text-lg md:text-2xl lg:text-hero font-black text-neon-red uppercase tracking-wider leading-none animate-slide-diagonal">
+            <h1 className="text-base md:text-lg lg:text-2xl font-black text-neon-red uppercase tracking-wider leading-none animate-slide-diagonal">
               QUEBRE SUAS
               <br />
               <span className="text-neon-orange relative">
                 CORRENTES
-                {/* Chain break effect */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-white/20 text-8xl">⛓️💥</span>
-                </div>
               </span>
             </h1>
           </div>
@@ -121,10 +117,10 @@ const CTAConsultingSlide: React.FC = () => {
 
           {/* Urgency Element */}
           <div className="text-center animate-fade-slide-up" style={{ animationDelay: '1.2s' }}>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-sm text-muted-foreground">
               Não deixe seus concorrentes saírem na frente
             </p>
-            <p className="text-xl font-bold text-neon-orange uppercase tracking-wide mt-2">
+            <p className="text-base font-bold text-neon-orange uppercase tracking-wide mt-2">
               REVOLUCIONE AGORA OU FIQUE PARA TRÁS
             </p>
           </div>

@@ -14,7 +14,7 @@ const ClosingSlide: React.FC = () => {
         {/* Main Brand - EVA Removed */}
         <div className="animate-fade-slide-up">
           <div className="relative inline-block">
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-primary animate-pulse-glow tracking-wider">
+            <h1 className="text-xl md:text-2xl lg:text-3xl font-black text-primary animate-pulse-glow tracking-wider">
               TRANSFORMAÇÃO
             </h1>
             {/* Glow Effect Around Text */}
@@ -24,7 +24,7 @@ const ClosingSlide: React.FC = () => {
 
         {/* Main Tagline */}
         <div className="space-y-6 md:space-y-8 animate-fade-slide-up" style={{ animationDelay: '0.5s' }}>
-          <h1 className="text-2xl md:text-4xl lg:text-5xl font-black text-white leading-none">
+          <h1 className="text-xl md:text-2xl lg:text-3xl font-black text-white leading-none">
             IA que <span className="text-green-400">NUNCA</span> falha,
             <br />
             <span className="text-green-400">NUNCA</span> falta,
@@ -36,19 +36,12 @@ const ClosingSlide: React.FC = () => {
         {/* Breaking Chains Message */}
         <div className="space-y-6 animate-fade-slide-up" style={{ animationDelay: '1s' }}>
           <div className="relative">
-            <h2 className="text-title font-bold text-neon-orange uppercase tracking-wider">
+            <h2 className="text-lg md:text-xl font-bold text-neon-orange uppercase tracking-wider">
               QUEBRE ESSAS CORRENTES
             </h2>
-            
-            {/* Chain Break Visual Effect */}
-            <div className="flex items-center justify-center gap-4 mt-6">
-              <span className="text-4xl opacity-30">⛓️</span>
-              <span className="text-6xl text-neon-orange animate-pulse">💥</span>
-              <span className="text-4xl opacity-30">⛓️</span>
-            </div>
           </div>
           
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
             Liberte sua empresa das limitações humanas. 
             <br />
             <span className="text-green-400 font-bold">A revolução da IA conversacional começou.</span>

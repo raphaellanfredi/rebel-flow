@@ -74,7 +74,7 @@ const EvaInActionSlide: React.FC = () => {
     <div className="slide-container">
       <div className="slide-content">
         <div className="text-center mb-12">
-          <h1 className="text-lg md:text-2xl lg:text-title font-black text-foreground uppercase">
+          <h1 className="text-base md:text-lg lg:text-xl font-black text-foreground uppercase">
             EVA EM <span className="text-primary">AÇÃO</span>
           </h1>
           <p className="text-body text-muted-foreground">
@@ -85,7 +85,7 @@ const EvaInActionSlide: React.FC = () => {
         <div className="max-w-4xl mx-auto">
           {/* Chat Interface */}
           <div className="bg-card/80 backdrop-blur-sm border border-border rounded-xl p-4 md:p-6 mb-6 md:mb-8">
-            <div className="h-64 md:h-80 lg:h-96 overflow-y-auto space-y-3 md:space-y-4">
+            <div className="h-64 md:h-80 lg:h-96 space-y-3 md:space-y-4">
               {demoSteps.map((step) => (
                 <ChatBubble 
                   key={step.step} 
@@ -161,8 +161,8 @@ const EvaInActionSlide: React.FC = () => {
           </div>
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-2xl font-bold text-foreground uppercase tracking-wide">
+        <div className="text-center mt-8">
+          <p className="text-lg md:text-xl font-bold text-foreground uppercase tracking-wide">
             MÉTODO FODA <span className="text-primary">FUNCIONANDO</span>
           </p>
           <p className="text-muted-foreground mt-2">

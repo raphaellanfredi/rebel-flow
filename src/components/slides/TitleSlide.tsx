@@ -21,9 +21,9 @@ const TitleSlide: React.FC = () => {
           
           <div className="mt-16">
             <p className="text-xl font-medium text-muted-foreground uppercase tracking-wider">
-              IA que <span className="text-primary font-bold">NUNCA</span> falha, 
-              <span className="text-primary font-bold"> NUNCA</span> falta, 
-              <span className="text-primary font-bold"> SEMPRE</span> converte
+              IA que <span className="text-green-400 font-bold">NUNCA</span> falha, 
+              <span className="text-green-400 font-bold"> NUNCA</span> falta, 
+              <span className="text-green-400 font-bold"> SEMPRE</span> converte
             </p>
           </div>
           

@@ -39,10 +39,10 @@ const ConversationComparisonSlide: React.FC = () => {
     <div className="slide-container">
       <div className="slide-content">
         <div className="text-center mb-8">
-          <h1 className="text-xl md:text-2xl lg:text-title font-black text-foreground uppercase">
+          <h1 className="text-lg md:text-xl lg:text-2xl font-black text-foreground uppercase">
             CONVERSA DISPERSA vs <span className="text-primary">FOCADA</span>
           </h1>
-          <p className="text-sm md:text-base lg:text-body text-muted-foreground">
+          <p className="text-sm md:text-base lg:text-body text-muted-foreground mt-2">
             A diferença que multiplica vendas
           </p>
         </div>
