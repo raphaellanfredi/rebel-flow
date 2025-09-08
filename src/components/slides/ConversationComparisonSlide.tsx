@@ -21,15 +21,15 @@ const ConversationComparisonSlide: React.FC = () => {
   ];
 
   const ChatBubble = ({ message, isEva = false }: { message: any, isEva?: boolean }) => (
-    <div className={`flex ${message.sender === 'client' ? 'justify-end' : 'justify-start'} mb-3`}>
-      <div className={`max-w-xs px-4 py-2 rounded-lg ${
+    <div className={`flex ${message.sender === 'client' ? 'justify-end' : 'justify-start'} mb-2 md:mb-3`}>
+      <div className={`max-w-[200px] md:max-w-xs px-2 md:px-3 lg:px-4 py-1 md:py-2 rounded-lg ${
         message.sender === 'client' 
           ? 'bg-blue-500/20 text-blue-100' 
           : isEva 
             ? 'chat-eva border' 
             : 'chat-human border'
       }`}>
-        <p className="text-sm">{message.text}</p>
+        <p className="text-xs md:text-sm">{message.text}</p>
         <p className="text-xs opacity-60 mt-1">{message.time}</p>
       </div>
     </div>
@@ -52,13 +52,13 @@ const ConversationComparisonSlide: React.FC = () => {
           {/* Scattered Conversation */}
           <div className="space-y-4 md:space-y-6 animate-fade-slide-up">
             <div className="text-center">
-              <h2 className="text-xl md:text-2xl font-bold text-red-400 uppercase mb-2">
+              <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-red-400 uppercase mb-2">
                 🤯 CONVERSA HUMANA
               </h2>
-              <p className="text-red-300 text-sm">Dispersa e improdutiva</p>
+              <p className="text-red-300 text-xs md:text-sm">Dispersa e improdutiva</p>
             </div>
 
-            <div className="bg-card/50 border border-red-500/30 rounded-lg p-3 md:p-4 conversation-chat min-h-[200px] max-h-[40vh] md:max-h-[50vh] overflow-y-auto">
+            <div className="bg-card/50 border border-red-500/30 rounded-lg p-2 md:p-3 lg:p-4 conversation-chat min-h-[180px] max-h-[35vh] md:max-h-[45vh] overflow-y-auto">
               {scatteredChat.map((msg, index) => (
                 <ChatBubble key={index} message={msg} />
               ))}
@@ -76,13 +76,13 @@ const ConversationComparisonSlide: React.FC = () => {
           {/* Focused Conversation */}
           <div className="space-y-4 md:space-y-6 animate-fade-slide-up" style={{ animationDelay: '0.3s' }}>
             <div className="text-center">
-              <h2 className="text-xl md:text-2xl font-bold text-green-400 uppercase mb-2">
+              <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-green-400 uppercase mb-2">
                 🎯 CONVERSA EVA
               </h2>
-              <p className="text-green-300 text-sm">Focada e eficiente</p>
+              <p className="text-green-300 text-xs md:text-sm">Focada e eficiente</p>
             </div>
 
-            <div className="bg-card/50 border border-green-500/30 rounded-lg p-3 md:p-4 conversation-chat min-h-[200px] max-h-[40vh] md:max-h-[50vh] overflow-y-auto">
+            <div className="bg-card/50 border border-green-500/30 rounded-lg p-2 md:p-3 lg:p-4 conversation-chat min-h-[180px] max-h-[35vh] md:max-h-[45vh] overflow-y-auto">
               {focusedChat.map((msg, index) => (
                 <ChatBubble key={index} message={msg} isEva={true} />
               ))}
