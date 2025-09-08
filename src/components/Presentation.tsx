@@ -126,7 +126,7 @@ const Presentation: React.FC<PresentationProps> = ({
   const CurrentSlideComponent = slides[currentSlide].component;
 
   return (
-    <div className="relative min-h-screen bg-background text-foreground">
+    <div className={`presentation-container ${isFullscreen ? 'fullscreen-mode' : ''}`}>
       {/* Progress Bar */}
       <div className="fixed top-0 left-0 right-0 z-50 h-1 bg-muted">
         <div 

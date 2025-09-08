@@ -370,47 +370,179 @@
 
 @layer base {
   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     @apply border-border;
   }
 
   html, body {
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
-    margin: 0;
-    padding: 0;
     @apply bg-background text-foreground font-sans;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 
-  .presentation-container {
-    height: 100vh;
+  /* CONTAINER PRINCIPAL DA APRESENTAÇÃO */
+  .presentation-container,
+  .slide-container,
+  .main-container,
+  main,
+  #root,
+  .App {
     width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
   }
 
-  /* Se tiver slides */
-  .slide {
+  /* CONTEÚDO DOS SLIDES */
+  .slide-content,
+  .content-wrapper,
+  .presentation-content {
+    width: 100%;
+    height: 100%;
     max-height: 100vh;
-    max-width: 100vw;
-    transform: scale(1);
-    transform-origin: center;
+    padding: 2rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
   }
 
-  /* Para ajustar escala automaticamente */
-  @media (max-aspect-ratio: 16/9) {
-    .slide {
-      transform: scale(calc(100vw / 1920));
+  /* AJUSTE PARA TIMELINE/AGENDA */
+  .timeline-container,
+  .agenda-container {
+    width: 90%;
+    max-width: 1200px;
+    height: auto;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 1rem;
+    margin: 0 auto;
+  }
+
+  /* RESPONSIVIDADE PARA DIFERENTES TELAS */
+  /* Tablets e telas médias */
+  @media screen and (max-width: 1024px) {
+    .slide-content,
+    .content-wrapper {
+      padding: 1.5rem;
+    }
+    
+    .timeline-container {
+      width: 95%;
+      max-height: 80vh;
     }
   }
 
-  @media (min-aspect-ratio: 16/9) {
-    .slide {
-      transform: scale(calc(100vh / 1080));
+  /* Mobile */
+  @media screen and (max-width: 768px) {
+    .slide-content,
+    .content-wrapper {
+      padding: 1rem;
     }
+    
+    .timeline-container {
+      width: 100%;
+      max-height: 75vh;
+      padding: 0.5rem;
+    }
+    
+    /* Ajusta tamanho de fontes para mobile */
+    h1 { font-size: 1.5rem !important; }
+    h2 { font-size: 1.3rem !important; }
+    h3 { font-size: 1.1rem !important; }
+    p, span { font-size: 0.9rem !important; }
+  }
+
+  /* Mobile pequeno */
+  @media screen and (max-width: 480px) {
+    .slide-content,
+    .content-wrapper {
+      padding: 0.5rem;
+    }
+    
+    /* Fontes ainda menores */
+    h1 { font-size: 1.3rem !important; }
+    h2 { font-size: 1.1rem !important; }
+    h3 { font-size: 1rem !important; }
+    p, span { font-size: 0.85rem !important; }
+  }
+
+  /* FIX ESPECÍFICO PARA IMAGENS E BACKGROUNDS */
+  img, video, iframe {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .background-image,
+  .bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  /* UTILIDADES PARA CENTRALIZAÇÃO */
+  .center-content {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-height: 100vh !important;
+  }
+
+  .fit-screen {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+  }
+
+  /* CORREÇÃO PARA OVERFLOW DE TEXTO */
+  .text-container,
+  .text-content {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  /* FIX PARA NAVEGAÇÃO/CONTROLES */
+  .navigation-controls,
+  .presentation-controls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+  }
+
+  /* MODO APRESENTAÇÃO FULLSCREEN */
+  .fullscreen-mode {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 9999 !important;
+  }
+
+  /* CSS COM VARIÁVEL CUSTOMIZADA */
+  .presentation-container-precise {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
   }
   
   /* SMOOTH SCROLLING */
