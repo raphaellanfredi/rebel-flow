@@ -266,14 +266,19 @@
       gap: clamp(0.75rem, 3vw, 1.5rem);
       max-height: none;
       overflow: visible;
+      width: 100%;
+      max-width: 100%;
     }
   }
   
   .vs-side {
+    width: 100%;
+    max-width: 100%;
     padding: clamp(1rem, 3vw, 1.5rem);
     border-radius: 0.75rem;
     border-width: 2px;
     transition: all 0.3s ease;
+    overflow-wrap: break-word;
   }
   
   .vs-human {
