@@ -59,6 +59,7 @@ const Presentation: React.FC<PresentationProps> = ({
   const [isPlaying, setIsPlaying] = useState(autoPlay);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [controlsVisible, setControlsVisible] = useState(true);
+  const [hideControls, setHideControls] = useState(false);
   const isMobile = useIsMobile();
   const touchStartX = useRef<number>(0);
   const touchEndX = useRef<number>(0);
@@ -105,12 +106,17 @@ const Presentation: React.FC<PresentationProps> = ({
           e.preventDefault();
           setCurrentSlide(slides.length - 1);
           break;
+        case 'h':
+        case 'H':
+          e.preventDefault();
+          setHideControls(!hideControls);
+          break;
       }
     };
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [isPlaying]);
+  }, [isPlaying, hideControls]);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -169,6 +175,7 @@ const Presentation: React.FC<PresentationProps> = ({
 
   // Auto-hide controls - Smart detection
   const showControls = () => {
+    if (hideControls) return; // Don't show controls if user has hidden them
     setControlsVisible(true);
     if (controlsTimeoutRef.current) {
       clearTimeout(controlsTimeoutRef.current);
@@ -181,12 +188,13 @@ const Presentation: React.FC<PresentationProps> = ({
   };
 
   useEffect(() => {
+    if (hideControls) return; // Don't auto-show if user has hidden them
     if (isMobile || isFullscreen) {
       showControls();
     } else {
       setControlsVisible(true);
     }
-  }, [isMobile, isFullscreen, currentSlide]);
+  }, [isMobile, isFullscreen, currentSlide, hideControls]);
 
   const CurrentSlideComponent = slides[currentSlide].component;
 
@@ -202,7 +210,7 @@ const Presentation: React.FC<PresentationProps> = ({
       {/* Progress Bar */}
       <div className={cn(
         "fixed top-0 left-0 right-0 z-50 h-1 bg-muted transition-all duration-300",
-        !controlsVisible && (isMobile || isFullscreen) && "opacity-0"
+        (hideControls || (!controlsVisible && (isMobile || isFullscreen))) && "opacity-0"
       )}>
         <div 
           className="h-full bg-primary transition-all duration-300"
@@ -216,91 +224,93 @@ const Presentation: React.FC<PresentationProps> = ({
       </div>
 
       {/* Navigation Controls - Mobile Optimized */}
-      <div className={cn(
-        "fixed z-50 flex items-center justify-between transition-all duration-500",
-        "bg-card/95 backdrop-blur-md border border-border/80 rounded-lg shadow-xl",
-        isMobile 
-          ? "bottom-4 left-4 right-4 p-2.5 h-12" 
-          : "bottom-6 left-6 right-6 p-4 h-16",
-        !controlsVisible && (isMobile || isFullscreen) && "opacity-0 pointer-events-none transform translate-y-2"
-      )}
-      style={isMobile ? { 
-        bottom: `max(1rem, env(safe-area-inset-bottom))`,
-        minHeight: '44px' // iOS minimum touch target
-      } : {}}>
-        {/* Left Controls */}
-        <div className={cn("flex items-center", isMobile ? "gap-2" : "gap-4")}>
-          <Button
-            variant="outline"
-            size={isMobile ? "sm" : "sm"}
-            onClick={prevSlide}
-            disabled={currentSlide === 0}
-            className={cn(
-              isMobile && "h-9 w-9 p-0 min-w-[36px]", // Minimum touch target 44px
-              "touch-manipulation"
-            )}
-          >
-            <ChevronLeft className={cn(isMobile ? "w-4 h-4" : "w-4 h-4")} />
-          </Button>
-          
-          {!isMobile && (
+      {!hideControls && (
+        <div className={cn(
+          "fixed z-50 flex items-center justify-between transition-all duration-500",
+          "bg-card/95 backdrop-blur-md border border-border/80 rounded-lg shadow-xl",
+          isMobile 
+            ? "bottom-4 left-4 right-4 p-2.5 h-12" 
+            : "bottom-6 left-6 right-6 p-4 h-16",
+          (!controlsVisible && (isMobile || isFullscreen)) && "opacity-0 pointer-events-none transform translate-y-2"
+        )}
+        style={isMobile ? { 
+          bottom: `max(1rem, env(safe-area-inset-bottom))`,
+          minHeight: '44px' // iOS minimum touch target
+        } : {}}>
+          {/* Left Controls */}
+          <div className={cn("flex items-center", isMobile ? "gap-2" : "gap-4")}>
             <Button
               variant="outline"
-              size="sm"
-              onClick={() => setIsPlaying(!isPlaying)}
+              size={isMobile ? "sm" : "sm"}
+              onClick={prevSlide}
+              disabled={currentSlide === 0}
+              className={cn(
+                isMobile && "h-9 w-9 p-0 min-w-[36px]", // Minimum touch target 44px
+                "touch-manipulation"
+              )}
             >
-              {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+              <ChevronLeft className={cn(isMobile ? "w-4 h-4" : "w-4 h-4")} />
             </Button>
-          )}
-        </div>
-
-        {/* Center - Slide Info */}
-        <div className="text-center flex-1 mx-4">
-          <div className={cn("font-medium", isMobile ? "text-xs" : "text-sm")}>
-            {currentSlide + 1} / {slides.length}
+            
+            {!isMobile && (
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setIsPlaying(!isPlaying)}
+              >
+                {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+              </Button>
+            )}
           </div>
-          {!isMobile && (
-            <div className="text-xs text-muted-foreground truncate">
-              {slides[currentSlide].title}
-            </div>
-          )}
-        </div>
 
-        {/* Right Controls */}
-        <div className={cn("flex items-center", isMobile ? "gap-2" : "gap-4")}>
-          <Button
-            variant="outline"
-            size={isMobile ? "sm" : "sm"}
-            onClick={nextSlide}
-            disabled={currentSlide === slides.length - 1}
-            className={cn(
-              isMobile && "h-9 w-9 p-0 min-w-[36px]",
-              "touch-manipulation"
+          {/* Center - Slide Info */}
+          <div className="text-center flex-1 mx-4">
+            <div className={cn("font-medium", isMobile ? "text-xs" : "text-sm")}>
+              {currentSlide + 1} / {slides.length}
+            </div>
+            {!isMobile && (
+              <div className="text-xs text-muted-foreground truncate">
+                {slides[currentSlide].title}
+              </div>
             )}
-          >
-            <ChevronRight className={cn(isMobile ? "w-4 h-4" : "w-4 h-4")} />
-          </Button>
-          
-          <Button
-            variant="outline"
-            size={isMobile ? "sm" : "sm"}
-            onClick={toggleFullscreen}
-            className={cn(
-              isMobile && "h-9 w-9 p-0 min-w-[36px]",
-              "touch-manipulation"
-            )}
-          >
-            <Maximize2 className={cn(isMobile ? "w-4 h-4" : "w-4 h-4")} />
-          </Button>
+          </div>
+
+          {/* Right Controls */}
+          <div className={cn("flex items-center", isMobile ? "gap-2" : "gap-4")}>
+            <Button
+              variant="outline"
+              size={isMobile ? "sm" : "sm"}
+              onClick={nextSlide}
+              disabled={currentSlide === slides.length - 1}
+              className={cn(
+                isMobile && "h-9 w-9 p-0 min-w-[36px]",
+                "touch-manipulation"
+              )}
+            >
+              <ChevronRight className={cn(isMobile ? "w-4 h-4" : "w-4 h-4")} />
+            </Button>
+            
+            <Button
+              variant="outline"
+              size={isMobile ? "sm" : "sm"}
+              onClick={toggleFullscreen}
+              className={cn(
+                isMobile && "h-9 w-9 p-0 min-w-[36px]",
+                "touch-manipulation"
+              )}
+            >
+              <Maximize2 className={cn(isMobile ? "w-4 h-4" : "w-4 h-4")} />
+            </Button>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Slide Thumbnails - Hidden on mobile */}
-      {!isMobile && (
+      {!isMobile && !hideControls && (
         <div className={cn(
           "fixed left-4 top-1/2 -translate-y-1/2 z-40",
           "flex flex-col gap-2 max-h-[80vh] overflow-y-auto",
-          !controlsVisible && isFullscreen && "opacity-0 pointer-events-none transition-opacity duration-300"
+          (!controlsVisible && isFullscreen) && "opacity-0 pointer-events-none transition-opacity duration-300"
         )}>
           {slides.map((slide, index) => (
             <button
