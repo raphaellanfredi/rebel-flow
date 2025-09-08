@@ -92,9 +92,9 @@ const ClientResearchSlide: React.FC = () => {
             Exatamente o que a EVA oferece 24/7
           </p>
           
-          <div className="inline-flex items-center gap-3 bg-primary/20 border border-primary/50 rounded-lg px-6 py-3 mt-6">
-            <Zap className="w-5 h-5 text-primary" />
-            <span className="text-primary font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-3 bg-green-400/20 border border-green-400/50 rounded-lg px-6 py-3 mt-6">
+            <Zap className="w-5 h-5 text-green-400" />
+            <span className="text-green-400 font-bold uppercase tracking-wider">
               EVA entrega os 3 ao mesmo tempo
             </span>
           </div>
