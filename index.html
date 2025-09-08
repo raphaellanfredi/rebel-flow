@@ -2,9 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>rebel-flow</title>
     <meta name="description" content="Lovable Generated Project" />
     <meta name="author" content="Lovable" />
@@ -22,37 +20,5 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script>
-      // Função para ajustar altura dinamicamente considerando a barra de endereços mobile
-      function adjustViewportHeight() {
-        let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-      }
-
-      // Executa no carregamento
-      window.addEventListener('load', adjustViewportHeight);
-      // Executa quando a tela é redimensionada
-      window.addEventListener('resize', adjustViewportHeight);
-      // Executa quando a orientação muda (mobile)
-      window.addEventListener('orientationchange', adjustViewportHeight);
-
-      // Previne zoom acidental em mobile
-      document.addEventListener('gesturestart', function(e) {
-        e.preventDefault();
-      });
-
-      // Função para forçar ajuste de containers
-      function forceResponsiveAdjust() {
-        const containers = document.querySelectorAll('.presentation-container, .slide-container, main, #root');
-        containers.forEach(container => {
-          container.style.height = '100vh';
-          container.style.maxHeight = '100vh';
-          container.style.overflow = 'hidden';
-        });
-      }
-
-      // Executa após o DOM carregar
-      document.addEventListener('DOMContentLoaded', forceResponsiveAdjust);
-    </script>
   </body>
 </html>
