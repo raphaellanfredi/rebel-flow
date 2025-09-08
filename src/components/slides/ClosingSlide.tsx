@@ -10,7 +10,7 @@ const ClosingSlide: React.FC = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
       </div>
 
-      <div className="slide-content text-center relative z-10 min-h-screen flex flex-col justify-center py-8">
+      <div className="slide-content text-center relative z-10 min-h-screen flex flex-col justify-between py-12">
         {/* Main Brand - EVA Removed */}
         <div className="animate-fade-slide-up mb-12">
           <div className="relative inline-block">
