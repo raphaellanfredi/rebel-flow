@@ -323,7 +323,7 @@ const Presentation: React.FC<PresentationProps> = ({
       {/* Click to advance - desktop only */}
       {!isMobile && (
         <div 
-          className="absolute inset-0 z-10 cursor-pointer"
+          className="absolute inset-[5%] z-10 cursor-pointer"
           onClick={nextSlide}
         />
       )}
