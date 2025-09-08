@@ -59,9 +59,6 @@ const CasesResultsSlide: React.FC = () => {
       style={{ animationDelay: `${index * 0.3}s` }}
     >
       <div className="text-center mb-6">
-        <div className={`w-20 h-20 rounded-full bg-gradient-to-br ${caseData.color} flex items-center justify-center mx-auto mb-4 shadow-lg`}>
-          <span className="text-3xl">{caseData.photo}</span>
-        </div>
         <h3 className="text-xl font-bold text-white">{caseData.name}</h3>
       </div>
 
@@ -107,9 +104,9 @@ const CasesResultsSlide: React.FC = () => {
 
         {/* ROI Badge */}
         <div className="text-center pt-4 border-t border-border">
-          <div className="inline-flex items-center gap-2 bg-primary/20 border border-primary/50 rounded-lg px-4 py-2">
-            <TrendingUp className="w-4 h-4 text-primary" />
-            <span className="text-primary font-bold">ROI: {caseData.roi}</span>
+          <div className="inline-flex items-center gap-2 bg-green-500/20 border border-green-500/50 rounded-lg px-4 py-2">
+            <TrendingUp className="w-4 h-4 text-green-400" />
+            <span className="text-green-400 font-bold">ROI: {caseData.roi}</span>
           </div>
         </div>
       </div>
@@ -176,11 +173,11 @@ const CasesResultsSlide: React.FC = () => {
           </div>
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-lg md:text-xl font-bold text-neon-red uppercase tracking-wide">
+        <div className="text-center mt-12 pb-8">
+          <p className="text-lg md:text-xl font-bold text-neon-red uppercase tracking-wide break-words">
             MÉDIA <span className="text-neon-orange">3x ROI</span> POR SEMESTRE
           </p>
-          <p className="text-muted-foreground mt-2">
+          <p className="text-muted-foreground mt-2 break-words">
             Resultados consistentes em diferentes segmentos
           </p>
         </div>
