@@ -48,8 +48,8 @@ const EvaInActionSlide: React.FC = () => {
   ];
 
   const ChatBubble = ({ step, isEva }: { step: any, isEva: boolean }) => (
-    <div className={`flex ${isEva ? 'justify-start' : 'justify-end'} mb-6 animate-fade-slide-up`} style={{ animationDelay: `${step.step * 0.5}s` }}>
-      <div className="max-w-md">
+    <div className={`flex ${isEva ? 'justify-start' : 'justify-end'} mb-4 animate-fade-slide-up`} style={{ animationDelay: `${step.step * 0.3}s` }}>
+      <div className="max-w-md w-full">
         <div className={`px-4 py-3 rounded-lg border ${
           isEva 
             ? 'bg-primary/20 border-primary/50 text-primary-foreground' 
@@ -85,7 +85,7 @@ const EvaInActionSlide: React.FC = () => {
         <div className="max-w-4xl mx-auto">
           {/* Chat Interface */}
           <div className="bg-card/80 backdrop-blur-sm border border-border rounded-xl p-4 md:p-6 mb-6 md:mb-8">
-            <div className="h-64 md:h-80 lg:h-96 space-y-3 md:space-y-4">
+            <div className="space-y-3 md:space-y-4 max-h-96 overflow-y-auto">
               {demoSteps.map((step) => (
                 <ChatBubble 
                   key={step.step} 
