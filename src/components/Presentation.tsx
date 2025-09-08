@@ -194,7 +194,7 @@ const Presentation: React.FC<PresentationProps> = ({
     } else {
       setControlsVisible(true);
     }
-  }, [isMobile, isFullscreen, currentSlide, hideControls]);
+  }, [isMobile, isFullscreen, hideControls]); // Removed currentSlide dependency
 
   const CurrentSlideComponent = slides[currentSlide].component;
 
