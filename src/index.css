@@ -152,18 +152,36 @@
     font-weight: 400;
   }
 
-  /* SLIDE LAYOUTS */
+  /* RESPONSIVE SLIDE LAYOUTS */
   .slide-container {
-    @apply w-full h-screen flex items-center justify-center relative overflow-hidden;
-    padding: clamp(0.5rem, 1vw, 1rem);
-    background: hsl(var(--background)); /* Pure black background */
+    width: 100vw;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden !important;
+    padding: clamp(1rem, 3vw, 3rem);
+    background: hsl(var(--background));
   }
 
   .slide-content {
-    @apply w-full max-w-full mx-auto relative z-10 px-4;
+    width: 100%;
+    max-width: min(95%, 1400px);
+    height: 100%;
+    max-height: calc(90vh - 2rem);
+    max-height: calc(calc(var(--vh, 1vh) * 90) - 2rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
   }
 
-  /* PROFESSIONAL GRID SYSTEM */
+  /* RESPONSIVE GRID SYSTEM */
   .intro-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -172,6 +190,7 @@
       "hero stats";
     gap: clamp(2rem, 6vw, 4rem);
     align-items: center;
+    width: 100%;
     min-height: 60vh;
   }
 
@@ -181,7 +200,14 @@
       grid-template-areas: 
         "hero"
         "stats";
-      gap: clamp(2rem, 8vw, 3rem);
+      gap: clamp(1.5rem, 6vw, 3rem);
+      min-height: auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .intro-grid {
+      gap: clamp(1rem, 4vw, 2rem);
     }
   }
   
@@ -198,13 +224,31 @@
     );
   }
   
-  /* COMPARISON LAYOUTS */
+  /* RESPONSIVE COMPARISON LAYOUTS */
   .vs-layout {
-    @apply grid grid-cols-1 md:grid-cols-3 gap-8 items-center;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: clamp(1rem, 4vw, 2rem);
+    align-items: center;
+    width: 100%;
+    max-height: 70vh;
+  }
+
+  @media (max-width: 768px) {
+    .vs-layout {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr auto 1fr;
+      gap: clamp(0.75rem, 3vw, 1.5rem);
+      max-height: 80vh;
+      overflow-y: auto;
+    }
   }
   
   .vs-side {
-    @apply p-6 rounded-lg border-2 transition-all duration-300;
+    padding: clamp(1rem, 3vw, 1.5rem);
+    border-radius: 0.75rem;
+    border-width: 2px;
+    transition: all 0.3s ease;
   }
   
   .vs-human {
@@ -369,13 +413,36 @@
 }
 
 @layer base {
+  /* COMPLETE RESPONSIVE RESET */
   * {
     @apply border-border;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    overflow: hidden !important;
+    position: fixed;
+    top: 0;
+    left: 0;
   }
 
   body {
-    @apply bg-background text-foreground font-sans overflow-x-hidden;
+    @apply bg-background text-foreground font-sans;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  #root {
+    width: 100vw;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    overflow: hidden !important;
+    position: relative;
   }
   
   /* SMOOTH SCROLLING */
@@ -388,9 +455,43 @@
     @apply bg-primary text-primary-foreground;
   }
   
+  /* MOBILE OPTIMIZATIONS */
+  @media (max-width: 768px) {
+    .slide-container {
+      padding: clamp(0.75rem, 2vw, 1.5rem);
+    }
+    
+    .slide-content {
+      max-height: calc(calc(var(--vh, 1vh) * 95) - 2rem);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .slide-container {
+      padding: clamp(0.5rem, 1.5vw, 1rem);
+    }
+  }
+
+  /* TOUCH-FRIENDLY ELEMENTS */
+  button, .clickable {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* PREVENT TEXT SELECTION ON TOUCH */
+  .slide-container, .presentation-container {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
   /* SCROLLBAR STYLING */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
+    height: 6px;
   }
   
   ::-webkit-scrollbar-track {
@@ -403,5 +504,17 @@
   
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-primary-glow;
+  }
+
+  /* HIDE SCROLLBARS ON MOBILE */
+  @media (max-width: 768px) {
+    * {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    
+    *::-webkit-scrollbar {
+      display: none;
+    }
   }
 }

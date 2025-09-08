@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Play, Pause } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { ChevronLeft, ChevronRight, Play, Pause, Maximize2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 // Import all slides
 import TitleSlide from './slides/TitleSlide';
@@ -56,6 +57,11 @@ const Presentation: React.FC<PresentationProps> = ({
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(autoPlay);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [controlsVisible, setControlsVisible] = useState(true);
+  const isMobile = useIsMobile();
+  const touchStartX = useRef<number>(0);
+  const touchEndX = useRef<number>(0);
+  const controlsTimeoutRef = useRef<NodeJS.Timeout>();
 
   // Auto-play functionality
   useEffect(() => {
@@ -115,20 +121,88 @@ const Presentation: React.FC<PresentationProps> = ({
 
   const toggleFullscreen = () => {
     if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen();
+      document.documentElement.requestFullscreen().catch(() => {
+        // Fallback for Safari on iOS
+        const elem = document.documentElement as any;
+        if (elem.webkitRequestFullscreen) {
+          elem.webkitRequestFullscreen();
+        }
+      });
       setIsFullscreen(true);
     } else {
-      document.exitFullscreen();
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else {
+        const doc = document as any;
+        if (doc.webkitExitFullscreen) {
+          doc.webkitExitFullscreen();
+        }
+      }
       setIsFullscreen(false);
     }
   };
 
+  // Touch gesture handling
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    
+    const distance = touchStartX.current - touchEndX.current;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe && currentSlide < slides.length - 1) {
+      nextSlide();
+    }
+    if (isRightSwipe && currentSlide > 0) {
+      prevSlide();
+    }
+  };
+
+  // Auto-hide controls in mobile fullscreen
+  const showControls = () => {
+    setControlsVisible(true);
+    if (controlsTimeoutRef.current) {
+      clearTimeout(controlsTimeoutRef.current);
+    }
+    if (isMobile || isFullscreen) {
+      controlsTimeoutRef.current = setTimeout(() => {
+        setControlsVisible(false);
+      }, 3000);
+    }
+  };
+
+  useEffect(() => {
+    if (isMobile || isFullscreen) {
+      showControls();
+    } else {
+      setControlsVisible(true);
+    }
+  }, [isMobile, isFullscreen, currentSlide]);
+
   const CurrentSlideComponent = slides[currentSlide].component;
 
   return (
-    <div className="relative min-h-screen bg-background text-foreground">
+    <div 
+      className="relative w-full h-full bg-background text-foreground overflow-hidden"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      onMouseMove={showControls}
+      onClick={showControls}
+    >
       {/* Progress Bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 h-1 bg-muted">
+      <div className={cn(
+        "fixed top-0 left-0 right-0 z-50 h-1 bg-muted transition-all duration-300",
+        !controlsVisible && (isMobile || isFullscreen) && "opacity-0"
+      )}>
         <div 
           className="h-full bg-primary transition-all duration-300"
           style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
@@ -142,89 +216,103 @@ const Presentation: React.FC<PresentationProps> = ({
 
       {/* Navigation Controls */}
       <div className={cn(
-        "fixed bottom-6 left-6 right-6 z-50 flex items-center justify-between",
-        "bg-card/80 backdrop-blur-sm border border-border rounded-lg p-4",
-        isFullscreen && "opacity-0 hover:opacity-100 transition-opacity duration-300"
+        "fixed z-50 flex items-center justify-between transition-all duration-300",
+        "bg-card/90 backdrop-blur-sm border border-border rounded-lg",
+        isMobile 
+          ? "bottom-4 left-4 right-4 p-3" 
+          : "bottom-6 left-6 right-6 p-4",
+        !controlsVisible && (isMobile || isFullscreen) && "opacity-0 pointer-events-none"
       )}>
         {/* Left Controls */}
-        <div className="flex items-center gap-4">
+        <div className={cn("flex items-center", isMobile ? "gap-2" : "gap-4")}>
           <Button
             variant="outline"
-            size="sm"
+            size={isMobile ? "sm" : "sm"}
             onClick={prevSlide}
             disabled={currentSlide === 0}
+            className={cn(isMobile && "h-8 w-8 p-0")}
           >
-            <ChevronLeft className="w-4 h-4" />
+            <ChevronLeft className={cn(isMobile ? "w-3 h-3" : "w-4 h-4")} />
           </Button>
           
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => setIsPlaying(!isPlaying)}
-          >
-            {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
-          </Button>
+          {!isMobile && (
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setIsPlaying(!isPlaying)}
+            >
+              {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+            </Button>
+          )}
         </div>
 
         {/* Center - Slide Info */}
-        <div className="text-center">
-          <div className="text-sm font-medium">
+        <div className="text-center flex-1 mx-4">
+          <div className={cn("font-medium", isMobile ? "text-xs" : "text-sm")}>
             {currentSlide + 1} / {slides.length}
           </div>
-          <div className="text-xs text-muted-foreground">
-            {slides[currentSlide].title}
-          </div>
+          {!isMobile && (
+            <div className="text-xs text-muted-foreground truncate">
+              {slides[currentSlide].title}
+            </div>
+          )}
         </div>
 
         {/* Right Controls */}
-        <div className="flex items-center gap-4">
+        <div className={cn("flex items-center", isMobile ? "gap-2" : "gap-4")}>
           <Button
             variant="outline"
-            size="sm"
+            size={isMobile ? "sm" : "sm"}
             onClick={nextSlide}
             disabled={currentSlide === slides.length - 1}
+            className={cn(isMobile && "h-8 w-8 p-0")}
           >
-            <ChevronRight className="w-4 h-4" />
+            <ChevronRight className={cn(isMobile ? "w-3 h-3" : "w-4 h-4")} />
           </Button>
           
           <Button
             variant="outline"
-            size="sm"
+            size={isMobile ? "sm" : "sm"}
             onClick={toggleFullscreen}
+            className={cn(isMobile && "h-8 w-8 p-0")}
           >
-            F
+            <Maximize2 className={cn(isMobile ? "w-3 h-3" : "w-4 h-4")} />
           </Button>
         </div>
       </div>
 
-      {/* Slide Thumbnails */}
-      <div className={cn(
-        "fixed left-4 top-1/2 -translate-y-1/2 z-40",
-        "flex flex-col gap-2 max-h-[80vh] overflow-y-auto",
-        isFullscreen && "opacity-0 hover:opacity-100 transition-opacity duration-300"
-      )}>
-        {slides.map((slide, index) => (
-          <button
-            key={slide.id}
-            onClick={() => setCurrentSlide(index)}
-            className={cn(
-              "w-16 h-12 rounded border-2 transition-all duration-200",
-              "bg-card/60 backdrop-blur-sm text-xs font-medium",
-              index === currentSlide 
-                ? "border-primary bg-primary/20 text-primary" 
-                : "border-border hover:border-primary/50"
-            )}
-          >
-            {slide.id}
-          </button>
-        ))}
-      </div>
+      {/* Slide Thumbnails - Hidden on mobile */}
+      {!isMobile && (
+        <div className={cn(
+          "fixed left-4 top-1/2 -translate-y-1/2 z-40",
+          "flex flex-col gap-2 max-h-[80vh] overflow-y-auto",
+          !controlsVisible && isFullscreen && "opacity-0 pointer-events-none transition-opacity duration-300"
+        )}>
+          {slides.map((slide, index) => (
+            <button
+              key={slide.id}
+              onClick={() => setCurrentSlide(index)}
+              className={cn(
+                "w-12 h-8 rounded border-2 transition-all duration-200",
+                "bg-card/60 backdrop-blur-sm text-xs font-medium",
+                index === currentSlide 
+                  ? "border-primary bg-primary/20 text-primary" 
+                  : "border-border hover:border-primary/50"
+              )}
+            >
+              {slide.id}
+            </button>
+          ))}
+        </div>
+      )}
 
-      {/* Click to advance */}
-      <div 
-        className="absolute inset-0 z-10 cursor-pointer"
-        onClick={nextSlide}
-      />
+      {/* Click to advance - desktop only */}
+      {!isMobile && (
+        <div 
+          className="absolute inset-0 z-10 cursor-pointer"
+          onClick={nextSlide}
+        />
+      )}
     </div>
   );
 };
