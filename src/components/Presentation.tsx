@@ -249,7 +249,7 @@ const Presentation: React.FC<PresentationProps> = ({
                 "touch-manipulation"
               )}
             >
-              <ChevronLeft className={cn(isMobile ? "w-4 h-4" : "w-4 h-4")} />
+              <ChevronLeft className={cn(isMobile ? "w-4 h-4" : "w-4 h-4", "text-green-400")} />
             </Button>
             
             {!isMobile && (
@@ -258,7 +258,7 @@ const Presentation: React.FC<PresentationProps> = ({
                 size="sm"
                 onClick={() => setIsPlaying(!isPlaying)}
               >
-                {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+                {isPlaying ? <Pause className="w-4 h-4 text-green-400" /> : <Play className="w-4 h-4 text-green-400" />}
               </Button>
             )}
           </div>
@@ -287,7 +287,7 @@ const Presentation: React.FC<PresentationProps> = ({
                 "touch-manipulation"
               )}
             >
-              <ChevronRight className={cn(isMobile ? "w-4 h-4" : "w-4 h-4")} />
+              <ChevronRight className={cn(isMobile ? "w-4 h-4" : "w-4 h-4", "text-green-400")} />
             </Button>
             
             <Button
@@ -299,7 +299,7 @@ const Presentation: React.FC<PresentationProps> = ({
                 "touch-manipulation"
               )}
             >
-              <Maximize2 className={cn(isMobile ? "w-4 h-4" : "w-4 h-4")} />
+              <Maximize2 className={cn(isMobile ? "w-4 h-4" : "w-4 h-4", "text-green-400")} />
             </Button>
           </div>
         </div>
