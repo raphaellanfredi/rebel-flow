@@ -7,22 +7,22 @@ const IntroSlide: React.FC = () => {
       icon: Users, 
       value: "200+", 
       label: "Empresas Implementadas", 
-      color: "text-primary",
-      bgColor: "bg-primary/10"
+      color: "text-green-400",
+      bgColor: "bg-green-400/10"
     },
     { 
       icon: TrendingUp, 
       value: "5x", 
       label: "ROI Médio", 
-      color: "text-secondary",
-      bgColor: "bg-secondary/10"
+      color: "text-green-400",
+      bgColor: "bg-green-400/10"
     },
     { 
       icon: Target, 
       value: "85%", 
       label: "Conversão Média", 
-      color: "text-accent",
-      bgColor: "bg-accent/10"
+      color: "text-green-400",
+      bgColor: "bg-green-400/10"
     },
   ];
 
@@ -57,7 +57,7 @@ const IntroSlide: React.FC = () => {
               <div className="credentials-list">
                 {credentials.map((credential, index) => (
                   <div key={index} className="credential-item">
-                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                     <span>{credential}</span>
                   </div>
                 ))}
