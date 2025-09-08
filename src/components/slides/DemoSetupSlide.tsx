@@ -100,7 +100,7 @@ const DemoSetupSlide: React.FC = () => {
                       <div className="text-xs text-muted-foreground">Taxa qualificação</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-neon-red animate-counter-up">12</div>
+                      <div className="text-2xl font-bold animate-counter-up" style={{ color: '#FFD700' }}>12</div>
                       <div className="text-xs text-muted-foreground">Demos agendadas</div>
                     </div>
                   </div>

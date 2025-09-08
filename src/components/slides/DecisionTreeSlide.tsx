@@ -6,7 +6,7 @@ const DecisionTreeSlide: React.FC = () => {
     <div className="slide-container">
       <div className="slide-content">
         <div className="text-center mb-8 md:mb-12 lg:mb-16">
-          <h1 className="text-2xl md:text-3xl lg:text-title font-black text-foreground uppercase">
+          <h1 className="text-lg md:text-2xl lg:text-3xl font-black text-foreground uppercase">
             ÁRVORE DE <span className="text-primary">DECISÃO</span>
           </h1>
           <p className="text-sm md:text-base lg:text-body text-muted-foreground mt-2">

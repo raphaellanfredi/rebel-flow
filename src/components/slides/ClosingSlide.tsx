@@ -14,7 +14,7 @@ const ClosingSlide: React.FC = () => {
         {/* Main Brand - EVA Removed */}
         <div className="animate-fade-slide-up">
           <div className="relative inline-block">
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-primary animate-pulse-glow tracking-wider">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-primary animate-pulse-glow tracking-wider">
               TRANSFORMAÇÃO
             </h1>
             {/* Glow Effect Around Text */}
@@ -24,12 +24,12 @@ const ClosingSlide: React.FC = () => {
 
         {/* Main Tagline */}
         <div className="space-y-6 md:space-y-8 animate-fade-slide-up" style={{ animationDelay: '0.5s' }}>
-          <h1 className="text-4xl md:text-6xl lg:text-hero font-black text-white leading-none">
-            IA que <span className="text-neon-red">NUNCA</span> falha,
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-black text-white leading-none">
+            IA que <span className="text-green-400">NUNCA</span> falha,
             <br />
-            <span className="text-neon-red">NUNCA</span> falta,
+            <span className="text-green-400">NUNCA</span> falta,
             <br />
-            <span className="text-neon-red">SEMPRE</span> converte
+            <span className="text-green-400">SEMPRE</span> converte
           </h1>
         </div>
 
@@ -42,16 +42,16 @@ const ClosingSlide: React.FC = () => {
             
             {/* Chain Break Visual Effect */}
             <div className="flex items-center justify-center gap-4 mt-6">
-              <span className="text-6xl opacity-30">⛓️</span>
-              <span className="text-8xl text-neon-orange animate-pulse">💥</span>
-              <span className="text-6xl opacity-30">⛓️</span>
+              <span className="text-4xl opacity-30">⛓️</span>
+              <span className="text-6xl text-neon-orange animate-pulse">💥</span>
+              <span className="text-4xl opacity-30">⛓️</span>
             </div>
           </div>
           
-          <p className="text-subtitle text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Liberte sua empresa das limitações humanas. 
             <br />
-            <span className="text-white font-bold">A revolução da IA conversacional começou.</span>
+            <span className="text-green-400 font-bold">A revolução da IA conversacional começou.</span>
           </p>
         </div>
 

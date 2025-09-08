@@ -63,7 +63,7 @@ const Timeline24hSlide: React.FC = () => {
                     cx={x}
                     cy={y}
                     r="8"
-                    fill="hsl(var(--primary))"
+                    fill="hsl(142 76% 36%)"
                     className="animate-pulse"
                     style={{ animationDelay: `${index * 0.2}s` }}
                   />
@@ -102,9 +102,9 @@ const Timeline24hSlide: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
             <div className="stat-card">
               <div className="flex items-center gap-4">
-                <div className="w-4 h-4 bg-primary rounded-full animate-pulse"></div>
+                <div className="w-4 h-4 bg-green-400 rounded-full animate-pulse"></div>
                 <div>
-                  <h3 className="font-bold text-primary">EVA - 24/7 ATIVA</h3>
+                  <h3 className="font-bold text-green-400">EVA - 24/7 ATIVA</h3>
                   <p className="text-sm text-muted-foreground">
                     Captura vendas em todos os horários
                   </p>
@@ -133,15 +133,15 @@ const Timeline24hSlide: React.FC = () => {
         </div>
 
         <div className="text-center mt-16 space-y-4">
-          <p className="text-2xl font-bold text-neon-red uppercase tracking-wide">
+          <p className="text-2xl font-bold text-green-400 uppercase tracking-wide">
             EVA captura <span className="text-neon-orange">117%</span> mais vendas
           </p>
           <p className="text-muted-foreground">
             Enquanto a concorrência dorme (18h-8h), EVA continua vendendo
           </p>
           
-          <div className="inline-flex items-center gap-3 bg-primary/20 border border-primary/50 rounded-lg px-6 py-3 mt-6">
-            <span className="text-primary font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-3 bg-green-400/20 border border-green-400/50 rounded-lg px-6 py-3 mt-6">
+            <span className="text-green-400 font-bold uppercase tracking-wider">
               Vendas perdidas = Oportunidades da EVA
             </span>
           </div>

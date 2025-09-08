@@ -128,13 +128,13 @@
 
   /* PROFESSIONAL TYPOGRAPHY SCALE */
   .text-hero { 
-    font-size: clamp(3.5rem, 8vw, 7rem); 
+    font-size: clamp(2.8rem, 6vw, 5.5rem); 
     line-height: 1.1; 
     letter-spacing: -0.02em;
     font-weight: 900;
   }
   .text-title { 
-    font-size: clamp(2.5rem, 5vw, 4.5rem); 
+    font-size: clamp(1.8rem, 4vw, 3.5rem); 
     line-height: 1.1; 
     letter-spacing: -0.01em;
     font-weight: 800;

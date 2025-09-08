@@ -57,8 +57,8 @@ const EvaVsInternSlide: React.FC = () => {
           </div>
         </div>
 
-        <div className="text-center mt-16">
-          <p className="text-2xl font-bold text-primary uppercase tracking-wide">
+        <div className="text-center mt-12">
+          <p className="text-lg md:text-xl font-bold text-primary uppercase tracking-wide">
             EVA: Conhecimento máximo desde o dia 1
           </p>
         </div>

@@ -38,11 +38,11 @@ const ConversationComparisonSlide: React.FC = () => {
   return (
     <div className="slide-container">
       <div className="slide-content">
-        <div className="text-center mb-12">
-          <h1 className="text-title font-black text-foreground uppercase">
+        <div className="text-center mb-8">
+          <h1 className="text-xl md:text-2xl lg:text-title font-black text-foreground uppercase">
             CONVERSA DISPERSA vs <span className="text-primary">FOCADA</span>
           </h1>
-          <p className="text-body text-muted-foreground">
+          <p className="text-sm md:text-base lg:text-body text-muted-foreground">
             A diferença que multiplica vendas
           </p>
         </div>
@@ -109,7 +109,7 @@ const ConversationComparisonSlide: React.FC = () => {
         {/* Bottom Stats */}
         <div className="text-center space-y-4">
           <p className="text-2xl font-bold text-neon-red uppercase tracking-wide">
-            40x MAIS <span className="text-neon-orange">RÁPIDO</span>
+            20x MAIS <span className="text-neon-orange">RÁPIDO</span>
           </p>
           <p className="text-muted-foreground">
             EVA vai direto ao ponto. Humano se perde no caminho.

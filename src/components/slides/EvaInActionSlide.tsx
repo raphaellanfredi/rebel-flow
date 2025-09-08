@@ -74,7 +74,7 @@ const EvaInActionSlide: React.FC = () => {
     <div className="slide-container">
       <div className="slide-content">
         <div className="text-center mb-12">
-          <h1 className="text-title font-black text-foreground uppercase">
+          <h1 className="text-lg md:text-2xl lg:text-title font-black text-foreground uppercase">
             EVA EM <span className="text-primary">AÇÃO</span>
           </h1>
           <p className="text-body text-muted-foreground">

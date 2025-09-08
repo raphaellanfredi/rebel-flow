@@ -13,15 +13,15 @@ const CasesResultsSlide: React.FC = () => {
       },
       after: {
         conversions: "78%",
-        revenue: "R$ 250k/mês", 
+        revenue: "R$ 150k/mês", 
         leads: "800/mês"
       },
-      roi: "5x",
+      roi: "3x",
       color: "from-purple-500 to-purple-600"
     },
     {
-      name: "Ricardo - SaaS",
-      photo: "👨‍💻",
+      name: "Stephanie - Clínica Médica",
+      photo: "👩‍⚕️",
       before: {
         conversions: "18%",
         revenue: "R$ 80k/mês",
@@ -29,15 +29,15 @@ const CasesResultsSlide: React.FC = () => {
       },
       after: {
         conversions: "85%",
-        revenue: "R$ 400k/mês",
+        revenue: "R$ 240k/mês",
         leads: "600/mês"
       },
-      roi: "5x",
+      roi: "3x",
       color: "from-blue-500 to-blue-600"
     },
     {
-      name: "Patricia - Consultoria",
-      photo: "👩‍🏫", 
+      name: "Alice - Agência de Viagens",
+      photo: "👩‍💼",
       before: {
         conversions: "30%",
         revenue: "R$ 120k/mês",
@@ -45,10 +45,10 @@ const CasesResultsSlide: React.FC = () => {
       },
       after: {
         conversions: "90%",
-        revenue: "R$ 600k/mês",
+        revenue: "R$ 360k/mês",
         leads: "400/mês"
       },
-      roi: "5x",
+      roi: "3x",
       color: "from-green-500 to-green-600"
     }
   ];
@@ -146,8 +146,8 @@ const CasesResultsSlide: React.FC = () => {
 
             <div className="stat-card text-center">
               <TrendingUp className="w-12 h-12 text-neon-orange mx-auto mb-4" />
-              <div className="text-4xl font-black text-neon-orange animate-counter-up">5x</div>
-              <div className="text-sm text-orange-300">ROI médio em 90 dias</div>
+              <div className="text-4xl font-black text-neon-orange animate-counter-up">3x</div>
+              <div className="text-sm text-orange-300">ROI médio por semestre</div>
             </div>
 
             <div className="stat-card text-center">
@@ -178,7 +178,7 @@ const CasesResultsSlide: React.FC = () => {
 
         <div className="text-center mt-16">
           <p className="text-2xl font-bold text-neon-red uppercase tracking-wide">
-            MÉDIA <span className="text-neon-orange">5x ROI</span> EM 90 DIAS
+            MÉDIA <span className="text-neon-orange">3x ROI</span> POR SEMESTRE
           </p>
           <p className="text-muted-foreground mt-2">
             Resultados consistentes em diferentes segmentos

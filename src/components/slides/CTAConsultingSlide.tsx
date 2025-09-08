@@ -22,7 +22,7 @@ const CTAConsultingSlide: React.FC = () => {
         <div className="text-center mb-16 space-y-6">
           {/* Breaking Chains Effect */}
           <div className="relative">
-            <h1 className="text-hero font-black text-neon-red uppercase tracking-wider leading-none animate-slide-diagonal">
+            <h1 className="text-lg md:text-2xl lg:text-hero font-black text-neon-red uppercase tracking-wider leading-none animate-slide-diagonal">
               QUEBRE SUAS
               <br />
               <span className="text-neon-orange relative">

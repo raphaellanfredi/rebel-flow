@@ -13,7 +13,7 @@ const PricingSlide: React.FC = () => {
           {/* EVA 1 */}
           <div className="bg-card/60 backdrop-blur-sm border border-border rounded-xl p-8 hover:border-primary/50 transition-all">
             <h3 className="text-2xl font-bold text-white mb-4">EVA 1</h3>
-            <div className="text-3xl font-black text-primary mb-6">
+            <div className="text-3xl font-black mb-6" style={{ color: '#FFD700' }}>
               R$ 777<span className="text-lg">/mês</span>
             </div>
             
@@ -49,14 +49,14 @@ const PricingSlide: React.FC = () => {
           {/* EVA PRO - RECOMENDADO */}
           <div className="bg-card/80 backdrop-blur-sm border-2 border-primary rounded-xl p-8 relative transform scale-105">
             <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-              <div className="bg-primary px-4 py-2 rounded-full flex items-center gap-2">
+              <div className="bg-green-500 px-4 py-2 rounded-full flex items-center gap-2">
                 <Star className="w-4 h-4" />
                 <span className="text-sm font-bold">RECOMENDADO</span>
               </div>
             </div>
             
             <h3 className="text-2xl font-bold text-white mb-4">EVA PRO</h3>
-            <div className="text-4xl font-black text-primary mb-6">
+            <div className="text-4xl font-black mb-6" style={{ color: '#FFD700' }}>
               R$ 1.530<span className="text-lg">/mês</span>
             </div>
             
@@ -91,8 +91,8 @@ const PricingSlide: React.FC = () => {
 
           {/* EVA BLACK */}
           <div className="bg-card/60 backdrop-blur-sm border border-secondary rounded-xl p-8 hover:border-secondary/50 transition-all">
-            <h3 className="text-2xl font-bold text-secondary mb-4">EVA BLACK</h3>
-            <div className="text-3xl font-black text-secondary mb-6">
+            <h3 className="text-2xl font-bold text-white mb-4">EVA BLACK</h3>
+            <div className="text-3xl font-black mb-6" style={{ color: '#FFD700' }}>
               R$ 3.510<span className="text-lg">/mês</span>
             </div>
             
