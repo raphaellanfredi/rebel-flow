@@ -10,11 +10,11 @@ const ClosingSlide: React.FC = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
       </div>
 
-      <div className="slide-content text-center relative z-10 space-y-16">
+      <div className="slide-content text-center relative z-10 min-h-screen flex flex-col justify-center py-8">
         {/* Main Brand - EVA Removed */}
-        <div className="animate-fade-slide-up">
+        <div className="animate-fade-slide-up mb-12">
           <div className="relative inline-block">
-            <h1 className="text-xl md:text-2xl lg:text-3xl font-black text-primary animate-pulse-glow tracking-wider">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-primary animate-pulse-glow tracking-wider">
               TRANSFORMAÇÃO
             </h1>
             {/* Glow Effect Around Text */}
@@ -23,8 +23,8 @@ const ClosingSlide: React.FC = () => {
         </div>
 
         {/* Main Tagline */}
-        <div className="space-y-6 md:space-y-8 animate-fade-slide-up" style={{ animationDelay: '0.5s' }}>
-          <h1 className="text-xl md:text-2xl lg:text-3xl font-black text-white leading-none">
+        <div className="space-y-8 md:space-y-10 animate-fade-slide-up mb-16" style={{ animationDelay: '0.5s' }}>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight">
             IA que <span className="text-green-400">NUNCA</span> falha,
             <br />
             <span className="text-green-400">NUNCA</span> falta,
@@ -34,14 +34,14 @@ const ClosingSlide: React.FC = () => {
         </div>
 
         {/* Breaking Chains Message */}
-        <div className="space-y-6 animate-fade-slide-up" style={{ animationDelay: '1s' }}>
+        <div className="space-y-8 animate-fade-slide-up mb-12" style={{ animationDelay: '1s' }}>
           <div className="relative">
-            <h2 className="text-lg md:text-xl font-bold text-neon-orange uppercase tracking-wider">
+            <h2 className="text-2xl md:text-3xl font-bold text-neon-orange uppercase tracking-wider">
               QUEBRE ESSAS CORRENTES
             </h2>
           </div>
           
-          <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             Liberte sua empresa das limitações humanas. 
             <br />
             <span className="text-green-400 font-bold">A revolução da IA conversacional começou.</span>
@@ -49,7 +49,7 @@ const ClosingSlide: React.FC = () => {
         </div>
 
         {/* Contact Information - Discrete but Present */}
-        <div className="space-y-4 animate-fade-slide-up" style={{ animationDelay: '1.5s' }}>
+        <div className="space-y-6 animate-fade-slide-up mt-auto" style={{ animationDelay: '1.5s' }}>
           <div className="w-32 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto"></div>
           
           <div className="text-sm text-muted-foreground space-y-2">
