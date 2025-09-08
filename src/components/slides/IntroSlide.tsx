@@ -12,7 +12,7 @@ const IntroSlide: React.FC = () => {
     },
     { 
       icon: TrendingUp, 
-      value: "5x", 
+      value: "3x", 
       label: "ROI Médio", 
       color: "text-green-400",
       bgColor: "bg-green-400/10"
