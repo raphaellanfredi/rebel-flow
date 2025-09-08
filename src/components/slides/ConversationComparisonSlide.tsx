@@ -47,17 +47,17 @@ const ConversationComparisonSlide: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
           {/* Scattered Conversation */}
-          <div className="space-y-6 animate-fade-slide-up">
+          <div className="space-y-4 md:space-y-6 animate-fade-slide-up">
             <div className="text-center">
-              <h2 className="text-2xl font-bold text-red-400 uppercase mb-2">
+              <h2 className="text-xl md:text-2xl font-bold text-red-400 uppercase mb-2">
                 🤯 CONVERSA HUMANA
               </h2>
               <p className="text-red-300 text-sm">Dispersa e improdutiva</p>
             </div>
 
-            <div className="bg-card/50 border border-red-500/30 rounded-lg p-4 h-80 overflow-y-auto">
+            <div className="bg-card/50 border border-red-500/30 rounded-lg p-3 md:p-4 min-h-[280px] max-h-[50vh] overflow-y-auto">
               {scatteredChat.map((msg, index) => (
                 <ChatBubble key={index} message={msg} />
               ))}
@@ -73,15 +73,15 @@ const ConversationComparisonSlide: React.FC = () => {
           </div>
 
           {/* Focused Conversation */}
-          <div className="space-y-6 animate-fade-slide-up" style={{ animationDelay: '0.3s' }}>
+          <div className="space-y-4 md:space-y-6 animate-fade-slide-up" style={{ animationDelay: '0.3s' }}>
             <div className="text-center">
-              <h2 className="text-2xl font-bold text-green-400 uppercase mb-2">
+              <h2 className="text-xl md:text-2xl font-bold text-green-400 uppercase mb-2">
                 🎯 CONVERSA EVA
               </h2>
               <p className="text-green-300 text-sm">Focada e eficiente</p>
             </div>
 
-            <div className="bg-card/50 border border-green-500/30 rounded-lg p-4 h-80 overflow-y-auto">
+            <div className="bg-card/50 border border-green-500/30 rounded-lg p-3 md:p-4 min-h-[280px] max-h-[50vh] overflow-y-auto">
               {focusedChat.map((msg, index) => (
                 <ChatBubble key={index} message={msg} isEva={true} />
               ))}

@@ -24,7 +24,7 @@ const DecisionTreeSlide: React.FC = () => {
           </div>
 
           {/* Split Path - Left Aligned */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-start">
             {/* Human Path */}
             <div className="space-y-6 animate-fade-slide-up">
               <div className="text-center">

@@ -23,6 +23,7 @@ import CasesResultsSlide from './slides/CasesResultsSlide';
 import CTAConsultingSlide from './slides/CTAConsultingSlide';
 import PricingSlide from './slides/PricingSlide';
 import ClosingSlide from './slides/ClosingSlide';
+import ImmediateActionSlide from './slides/ImmediateActionSlide';
 
 const slides = [
   { id: 1, component: TitleSlide, title: "O Mapa do Tesouro da IA" },
@@ -36,7 +37,7 @@ const slides = [
   { id: 9, component: ConversationComparisonSlide, title: "Conversa Dispersa vs Focada" },
   { id: 10, component: Timeline24hSlide, title: "Timeline 24H" },
   { id: 11, component: DecisionTreeSlide, title: "Árvore de Decisão" },
-  
+  { id: 12, component: ImmediateActionSlide, title: "Ação Imediata" },
   { id: 13, component: DemoSetupSlide, title: "Setup Demo EVA" },
   { id: 14, component: EvaInActionSlide, title: "EVA em Ação" },
   { id: 15, component: CasesResultsSlide, title: "Cases - Números" },

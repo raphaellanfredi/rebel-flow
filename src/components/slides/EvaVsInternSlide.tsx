@@ -29,26 +29,26 @@ const EvaVsInternSlide: React.FC = () => {
                 className="stat-card animate-fade-slide-up"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <div className="grid grid-cols-4 gap-6 items-center">
-                  <div className="font-bold text-white uppercase">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 items-center">
+                  <div className="font-bold text-white uppercase text-center md:text-left">
                     {comp.category}
                   </div>
                   
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-red-400 mb-1">
+                    <div className="text-xl md:text-2xl font-bold text-red-400 mb-1">
                       {comp.human}
                     </div>
                     <div className="text-xs text-red-300 uppercase">Estagiário</div>
                   </div>
                   
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-green-400 mb-1">
+                    <div className="text-xl md:text-2xl font-bold text-green-400 mb-1">
                       {comp.eva}
                     </div>
                     <div className="text-xs text-green-300 uppercase">EVA</div>
                   </div>
                   
-                  <div className="text-sm text-muted-foreground">
+                  <div className="text-sm text-muted-foreground text-center md:text-left xl:col-span-1 md:col-span-2 xl:col-span-1">
                     {comp.description}
                   </div>
                 </div>

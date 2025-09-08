@@ -457,6 +457,30 @@
       max-height: calc(100dvh - 6rem);
       padding: clamp(0.5rem, 2vw, 1rem);
     }
+
+    /* Responsive Chat Containers */
+    .conversation-chat {
+      min-height: 200px !important;
+      max-height: 40vh !important;
+    }
+
+    /* Decision Tree Mobile Layout */
+    .decision-tree {
+      gap: 1rem !important;
+    }
+
+    /* Comparison Grid Mobile */
+    .vs-layout .grid {
+      grid-template-columns: 1fr !important;
+      gap: 1rem !important;
+    }
+
+    /* Stat Cards Mobile */
+    .stat-card .grid {
+      grid-template-columns: 1fr !important;
+      gap: 0.75rem !important;
+      text-align: center !important;
+    }
   }
 
   @media (max-width: 480px) {
@@ -466,6 +490,12 @@
     
     .slide-content {
       max-height: calc(100dvh - 4rem);
+    }
+
+    /* Extra small mobile adjustments */
+    .conversation-chat {
+      min-height: 180px !important;
+      max-height: 35vh !important;
     }
   }
 
