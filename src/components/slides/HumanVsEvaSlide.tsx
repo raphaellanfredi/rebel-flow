@@ -28,9 +28,9 @@ const HumanVsEvaSlide: React.FC = () => {
           </h1>
         </div>
 
-        {/* VS Layout - Centralized */}
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center justify-center">
+        {/* VS Layout - Responsive */}
+        <div className="container-responsive">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 items-start">
           {/* Human Side */}
           <div className="vs-side vs-human animate-fade-slide-up">
             <div className="text-center mb-8">

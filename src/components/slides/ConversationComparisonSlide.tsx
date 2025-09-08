@@ -47,7 +47,8 @@ const ConversationComparisonSlide: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
+        <div className="container-responsive">
+          <div className="grid-responsive-2col spacing-responsive max-w-6xl mx-auto">
           {/* Scattered Conversation */}
           <div className="space-y-4 md:space-y-6 animate-fade-slide-up">
             <div className="text-center">
@@ -57,7 +58,7 @@ const ConversationComparisonSlide: React.FC = () => {
               <p className="text-red-300 text-sm">Dispersa e improdutiva</p>
             </div>
 
-            <div className="bg-card/50 border border-red-500/30 rounded-lg p-3 md:p-4 min-h-[280px] max-h-[50vh] overflow-y-auto">
+            <div className="bg-card/50 border border-red-500/30 rounded-lg p-3 md:p-4 conversation-chat min-h-[200px] max-h-[40vh] md:max-h-[50vh] overflow-y-auto">
               {scatteredChat.map((msg, index) => (
                 <ChatBubble key={index} message={msg} />
               ))}
@@ -81,7 +82,7 @@ const ConversationComparisonSlide: React.FC = () => {
               <p className="text-green-300 text-sm">Focada e eficiente</p>
             </div>
 
-            <div className="bg-card/50 border border-green-500/30 rounded-lg p-3 md:p-4 min-h-[280px] max-h-[50vh] overflow-y-auto">
+            <div className="bg-card/50 border border-green-500/30 rounded-lg p-3 md:p-4 conversation-chat min-h-[200px] max-h-[40vh] md:max-h-[50vh] overflow-y-auto">
               {focusedChat.map((msg, index) => (
                 <ChatBubble key={index} message={msg} isEva={true} />
               ))}
@@ -94,6 +95,7 @@ const ConversationComparisonSlide: React.FC = () => {
               </div>
               <p className="text-sm text-green-300">Demo agendada ✅</p>
             </div>
+          </div>
           </div>
         </div>
 

@@ -45,22 +45,22 @@ const AgendaSlide: React.FC = () => {
           </p>
         </div>
 
-        <div className="relative max-w-4xl mx-auto">
-          {/* Timeline Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-secondary to-green-500"></div>
+        <div className="relative container-responsive">
+          {/* Timeline Line - Hidden on mobile */}
+          <div className="hidden md:block absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-secondary to-green-500"></div>
 
           {/* Timeline Items */}
-          <div className="space-y-8">
+          <div className="space-y-4 md:space-y-8">
             {agendaItems.map((item, index) => {
               const Icon = item.icon;
               return (
                 <div 
                   key={index}
-                  className={`relative pl-20 animate-fade-slide-up`}
+                  className={`relative md:pl-20 animate-fade-slide-up timeline-mobile`}
                   style={{ animationDelay: `${index * 0.3}s` }}
                 >
-                  {/* Timeline Dot */}
-                  <div className="absolute left-6 w-5 h-5 bg-primary rounded-full border-4 border-background shadow-lg shadow-red-500/50"></div>
+                  {/* Timeline Dot - Hidden on mobile */}
+                  <div className="hidden md:block absolute left-6 w-5 h-5 bg-primary rounded-full border-4 border-background shadow-lg shadow-red-500/50"></div>
                   
                   {/* Content Card */}
                   <div className={`stat-card border-l-4 ${item.color}`}>

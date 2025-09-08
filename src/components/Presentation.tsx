@@ -167,7 +167,7 @@ const Presentation: React.FC<PresentationProps> = ({
     }
   };
 
-  // Auto-hide controls in mobile fullscreen
+  // Auto-hide controls - Smart detection
   const showControls = () => {
     setControlsVisible(true);
     if (controlsTimeoutRef.current) {
@@ -176,7 +176,7 @@ const Presentation: React.FC<PresentationProps> = ({
     if (isMobile || isFullscreen) {
       controlsTimeoutRef.current = setTimeout(() => {
         setControlsVisible(false);
-      }, 3000);
+      }, 2000); // Faster hide for better UX
     }
   };
 
@@ -215,17 +215,18 @@ const Presentation: React.FC<PresentationProps> = ({
         <CurrentSlideComponent />
       </div>
 
-      {/* Navigation Controls */}
+      {/* Navigation Controls - Mobile Optimized */}
       <div className={cn(
-        "fixed z-50 flex items-center justify-between transition-all duration-300",
-        "bg-card/90 backdrop-blur-sm border border-border rounded-lg",
+        "fixed z-50 flex items-center justify-between transition-all duration-500",
+        "bg-card/95 backdrop-blur-md border border-border/80 rounded-lg shadow-xl",
         isMobile 
-          ? "bottom-safe-4 left-4 right-4 p-3" 
-          : "bottom-6 left-6 right-6 p-4",
-        !controlsVisible && (isMobile || isFullscreen) && "opacity-0 pointer-events-none"
+          ? "bottom-4 left-4 right-4 p-2.5 h-12" 
+          : "bottom-6 left-6 right-6 p-4 h-16",
+        !controlsVisible && (isMobile || isFullscreen) && "opacity-0 pointer-events-none transform translate-y-2"
       )}
       style={isMobile ? { 
-        bottom: `max(1rem, env(safe-area-inset-bottom))` 
+        bottom: `max(1rem, env(safe-area-inset-bottom))`,
+        minHeight: '44px' // iOS minimum touch target
       } : {}}>
         {/* Left Controls */}
         <div className={cn("flex items-center", isMobile ? "gap-2" : "gap-4")}>
@@ -234,9 +235,12 @@ const Presentation: React.FC<PresentationProps> = ({
             size={isMobile ? "sm" : "sm"}
             onClick={prevSlide}
             disabled={currentSlide === 0}
-            className={cn(isMobile && "h-8 w-8 p-0")}
+            className={cn(
+              isMobile && "h-9 w-9 p-0 min-w-[36px]", // Minimum touch target 44px
+              "touch-manipulation"
+            )}
           >
-            <ChevronLeft className={cn(isMobile ? "w-3 h-3" : "w-4 h-4")} />
+            <ChevronLeft className={cn(isMobile ? "w-4 h-4" : "w-4 h-4")} />
           </Button>
           
           {!isMobile && (
@@ -269,18 +273,24 @@ const Presentation: React.FC<PresentationProps> = ({
             size={isMobile ? "sm" : "sm"}
             onClick={nextSlide}
             disabled={currentSlide === slides.length - 1}
-            className={cn(isMobile && "h-8 w-8 p-0")}
+            className={cn(
+              isMobile && "h-9 w-9 p-0 min-w-[36px]",
+              "touch-manipulation"
+            )}
           >
-            <ChevronRight className={cn(isMobile ? "w-3 h-3" : "w-4 h-4")} />
+            <ChevronRight className={cn(isMobile ? "w-4 h-4" : "w-4 h-4")} />
           </Button>
           
           <Button
             variant="outline"
             size={isMobile ? "sm" : "sm"}
             onClick={toggleFullscreen}
-            className={cn(isMobile && "h-8 w-8 p-0")}
+            className={cn(
+              isMobile && "h-9 w-9 p-0 min-w-[36px]",
+              "touch-manipulation"
+            )}
           >
-            <Maximize2 className={cn(isMobile ? "w-3 h-3" : "w-4 h-4")} />
+            <Maximize2 className={cn(isMobile ? "w-4 h-4" : "w-4 h-4")} />
           </Button>
         </div>
       </div>

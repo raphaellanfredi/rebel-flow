@@ -181,6 +181,31 @@
     overflow: hidden;
   }
 
+  /* RESPONSIVE CONTAINER SYSTEM */
+  .container-responsive {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .grid-responsive-cards {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+  }
+
+  .grid-responsive-2col {
+    @apply grid grid-cols-1 lg:grid-cols-2;
+  }
+
+  .grid-responsive-3col {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+  }
+
+  .spacing-responsive {
+    @apply gap-4 md:gap-6 lg:gap-8;
+  }
+
+  .text-responsive-title {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+  }
+
   /* RESPONSIVE GRID SYSTEM */
   .intro-grid {
     display: grid;
@@ -229,9 +254,9 @@
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     gap: clamp(1rem, 4vw, 2rem);
-    align-items: center;
+    align-items: start;
     width: 100%;
-    max-height: 70vh;
+    max-height: 80vh;
   }
 
   @media (max-width: 768px) {
@@ -239,8 +264,8 @@
       grid-template-columns: 1fr;
       grid-template-rows: 1fr auto 1fr;
       gap: clamp(0.75rem, 3vw, 1.5rem);
-      max-height: 80vh;
-      overflow-y: auto;
+      max-height: none;
+      overflow: visible;
     }
   }
   
@@ -462,24 +487,41 @@
     .conversation-chat {
       min-height: 200px !important;
       max-height: 40vh !important;
+      overflow-y: auto !important;
     }
 
     /* Decision Tree Mobile Layout */
     .decision-tree {
-      gap: 1rem !important;
-    }
-
-    /* Comparison Grid Mobile */
-    .vs-layout .grid {
+      gap: 0.75rem !important;
       grid-template-columns: 1fr !important;
+    }
+
+    /* Comparison Grid Mobile Optimization */
+    .vs-layout {
+      max-height: none !important;
       gap: 1rem !important;
     }
 
-    /* Stat Cards Mobile */
+    /* Stat Cards Mobile Stack */
+    .stat-card {
+      padding: 1rem !important;
+    }
+
     .stat-card .grid {
       grid-template-columns: 1fr !important;
-      gap: 0.75rem !important;
+      gap: 0.5rem !important;
       text-align: center !important;
+    }
+
+    /* Timeline Mobile Fix */
+    .timeline-mobile {
+      position: relative !important;
+      left: 0 !important;
+      padding-left: 0 !important;
+    }
+
+    .timeline-mobile::before {
+      display: none !important;
     }
   }
 
