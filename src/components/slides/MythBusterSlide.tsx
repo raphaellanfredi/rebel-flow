@@ -5,9 +5,9 @@ const MythBusterSlide: React.FC = () => {
     <div className="slide-container relative overflow-hidden">
       {/* Explosion Effect Background */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary/20 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute top-3/4 right-1/4 w-24 h-24 bg-secondary/20 rounded-full blur-xl animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-        <div className="absolute bottom-1/4 left-1/3 w-20 h-20 bg-primary/30 rounded-full blur-lg animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-green-400/20 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute top-3/4 right-1/4 w-24 h-24 bg-green-400/20 rounded-full blur-xl animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+        <div className="absolute bottom-1/4 left-1/3 w-20 h-20 bg-green-400/30 rounded-full blur-lg animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
 
       <div className="slide-content text-center relative z-10">
@@ -66,7 +66,7 @@ const MythBusterSlide: React.FC = () => {
         {[...Array(12)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-primary rounded-full animate-pulse"
+            className="absolute w-1 h-1 bg-green-400 rounded-full animate-pulse"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
