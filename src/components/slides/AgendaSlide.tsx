@@ -36,11 +36,11 @@ const AgendaSlide: React.FC = () => {
   return (
     <div className="slide-container">
       <div className="slide-content">
-        <div className="text-center mb-16">
-          <h1 className="text-title font-black text-neon-red uppercase mb-4">
+        <div className="text-center mb-8 md:mb-12 lg:mb-16">
+          <h1 className="text-2xl md:text-3xl lg:text-title font-black text-neon-red uppercase mb-2 md:mb-4">
             AGENDA DA <span className="text-neon-orange">REVOLUÇÃO</span>
           </h1>
-          <p className="text-body text-muted-foreground">
+          <p className="text-sm md:text-base lg:text-body text-muted-foreground">
             Prepare-se para descobrir o que pode mudar seu negócio para sempre
           </p>
         </div>
@@ -70,10 +70,10 @@ const AgendaSlide: React.FC = () => {
                           <Icon className="w-6 h-6" />
                         </div>
                         <div>
-                          <h3 className="text-xl font-bold text-white uppercase tracking-wide">
+                          <h3 className="text-lg md:text-xl font-bold text-white uppercase tracking-wide">
                             {item.title}
                           </h3>
-                          <p className="text-muted-foreground mt-1">
+                          <p className="text-muted-foreground mt-1 text-sm md:text-base">
                             {item.description}
                           </p>
                         </div>

@@ -5,21 +5,21 @@ const DecisionTreeSlide: React.FC = () => {
   return (
     <div className="slide-container">
       <div className="slide-content">
-        <div className="text-center mb-16">
-          <h1 className="text-title font-black text-foreground uppercase">
+        <div className="text-center mb-8 md:mb-12 lg:mb-16">
+          <h1 className="text-2xl md:text-3xl lg:text-title font-black text-foreground uppercase">
             ÁRVORE DE <span className="text-primary">DECISÃO</span>
           </h1>
-          <p className="text-body text-muted-foreground">
+          <p className="text-sm md:text-base lg:text-body text-muted-foreground mt-2">
             Fluxo de qualificação e conversão
           </p>
         </div>
 
         <div className="max-w-6xl mx-auto">
           {/* Starting Point */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-3 bg-blue-500/20 border border-blue-500/50 rounded-lg px-6 py-3">
-              <span className="text-2xl">👤</span>
-              <span className="text-xl font-bold text-blue-400">LEAD CHEGA</span>
+          <div className="text-center mb-8 md:mb-12">
+            <div className="inline-flex items-center gap-2 md:gap-3 bg-blue-500/20 border border-blue-500/50 rounded-lg px-4 md:px-6 py-2 md:py-3">
+              <span className="text-xl md:text-2xl">👤</span>
+              <span className="text-lg md:text-xl font-bold text-blue-400">LEAD CHEGA</span>
             </div>
           </div>
 

@@ -22,22 +22,22 @@ const HumanVsEvaSlide: React.FC = () => {
     <div className="slide-container">
       <div className="slide-content">
         {/* Title */}
-        <div className="text-center mb-16">
-          <h1 className="text-title font-black text-foreground uppercase mb-4">
+        <div className="text-center mb-8 md:mb-12 lg:mb-16">
+          <h1 className="text-2xl md:text-3xl lg:text-title font-black text-foreground uppercase mb-2 md:mb-4">
             A <span className="text-primary">VERDADE</span> que te esconderam
           </h1>
         </div>
 
         {/* VS Layout - Responsive */}
         <div className="container-responsive">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 items-start">
           {/* Human Side */}
           <div className="vs-side vs-human animate-fade-slide-up">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-red-400 uppercase tracking-wide">
+            <div className="text-center mb-6 md:mb-8">
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-red-400 uppercase tracking-wide">
                 👤 HUMANO
               </h2>
-              <p className="text-red-300 mt-2">Vendedor tradicional</p>
+              <p className="text-red-300 mt-1 md:mt-2 text-sm md:text-base">Vendedor tradicional</p>
             </div>
             
             <div className="space-y-4">
@@ -78,11 +78,11 @@ const HumanVsEvaSlide: React.FC = () => {
 
           {/* EVA Side */}
           <div className="vs-side vs-eva animate-fade-slide-up" style={{ animationDelay: '0.3s' }}>
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-green-400 uppercase tracking-wide">
+            <div className="text-center mb-6 md:mb-8">
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-green-400 uppercase tracking-wide">
                 🤖 EVA
               </h2>
-              <p className="text-green-300 mt-2">IA Conversacional</p>
+              <p className="text-green-300 mt-1 md:mt-2 text-sm md:text-base">IA Conversacional</p>
             </div>
             
             <div className="space-y-4">
