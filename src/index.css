@@ -274,7 +274,7 @@
   .vs-side {
     width: 100%;
     max-width: 100%;
-    padding: clamp(1rem, 3vw, 1.5rem);
+    padding: clamp(0.9rem, 2.7vw, 1.35rem);
     border-radius: 0.75rem;
     border-width: 2px;
     transition: all 0.3s ease;
