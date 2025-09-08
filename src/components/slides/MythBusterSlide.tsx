@@ -36,9 +36,9 @@ const MythBusterSlide: React.FC = () => {
           {/* Subtitle */}
           <div className="animate-fade-slide-up" style={{ animationDelay: '0.5s' }}>
             <p className="text-lg md:text-xl lg:text-2xl font-bold text-white uppercase tracking-wide">
-              <span className="text-green-400">✅</span> As verdades que <span className="text-neon-red">NINGUÉM</span> te conta
+              As verdades que <span className="text-neon-red">NINGUÉM</span> te conta
               <br />
-              sobre IA conversacional <span className="text-green-400">✅</span>
+              sobre IA conversacional
             </p>
           </div>
 
