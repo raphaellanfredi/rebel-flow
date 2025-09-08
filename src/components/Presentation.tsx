@@ -219,10 +219,13 @@ const Presentation: React.FC<PresentationProps> = ({
         "fixed z-50 flex items-center justify-between transition-all duration-300",
         "bg-card/90 backdrop-blur-sm border border-border rounded-lg",
         isMobile 
-          ? "bottom-4 left-4 right-4 p-3" 
+          ? "bottom-safe-4 left-4 right-4 p-3" 
           : "bottom-6 left-6 right-6 p-4",
         !controlsVisible && (isMobile || isFullscreen) && "opacity-0 pointer-events-none"
-      )}>
+      )}
+      style={isMobile ? { 
+        bottom: `max(1rem, env(safe-area-inset-bottom))` 
+      } : {}}>
         {/* Left Controls */}
         <div className={cn("flex items-center", isMobile ? "gap-2" : "gap-4")}>
           <Button
