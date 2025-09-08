@@ -11,18 +11,18 @@ const CTAConsultingSlide: React.FC = () => {
   ];
 
   return (
-    <div className="slide-container relative overflow-hidden">
+    <div className="slide-container relative overflow-visible min-h-screen">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
 
-      <div className="slide-content relative z-10">
-        <div className="text-center mb-16 space-y-6">
+      <div className="slide-content relative z-10 py-8 px-4">
+        <div className="text-center mb-12 space-y-4">
           {/* Breaking Chains Effect */}
           <div className="relative">
-            <h1 className="text-base md:text-lg lg:text-2xl font-black text-neon-red uppercase tracking-wider leading-none animate-slide-diagonal">
+            <h1 className="text-base md:text-lg lg:text-2xl font-black text-neon-red uppercase tracking-wider leading-tight animate-slide-diagonal">
               QUEBRE SUAS
               <br />
               <span className="text-neon-orange relative">
@@ -31,7 +31,7 @@ const CTAConsultingSlide: React.FC = () => {
             </h1>
           </div>
 
-          <p className="text-subtitle font-bold text-white">
+          <p className="text-sm md:text-base lg:text-lg font-bold text-white">
             Consultoria GRATUITA para implementar EVA
           </p>
         </div>
@@ -116,11 +116,11 @@ const CTAConsultingSlide: React.FC = () => {
           </div>
 
           {/* Urgency Element */}
-          <div className="text-center animate-fade-slide-up" style={{ animationDelay: '1.2s' }}>
-            <p className="text-sm text-muted-foreground">
+          <div className="text-center animate-fade-slide-up pb-8" style={{ animationDelay: '1.2s' }}>
+            <p className="text-sm text-muted-foreground break-words">
               Não deixe seus concorrentes saírem na frente
             </p>
-            <p className="text-base font-bold text-neon-orange uppercase tracking-wide mt-2">
+            <p className="text-base font-bold text-neon-orange uppercase tracking-wide mt-2 break-words">
               REVOLUCIONE AGORA OU FIQUE PARA TRÁS
             </p>
           </div>
