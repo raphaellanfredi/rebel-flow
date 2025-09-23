@@ -13,10 +13,29 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: {
+        DEFAULT: "1rem",
+        sm: "1.5rem",
+        md: "2rem",
+        lg: "2.5rem",
+        xl: "3rem",
+      },
       screens: {
+        xs: "475px",
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
         "2xl": "1400px",
       },
+    },
+    screens: {
+      xs: "475px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1400px",
     },
     extend: {
       colors: {
@@ -60,6 +79,16 @@ export default {
         'title': 'var(--font-size-title)',
         'subtitle': 'var(--font-size-subtitle)',
         'body': 'var(--font-size-body)',
+        'small': 'var(--font-size-small)',
+      },
+      spacing: {
+        'xs': 'var(--space-xs)',
+        'sm': 'var(--space-sm)', 
+        'md': 'var(--space-md)',
+        'lg': 'var(--space-lg)',
+        'xl': 'var(--space-xl)',
+        '2xl': 'var(--space-2xl)',
+        '3xl': 'var(--space-3xl)',
       },
       boxShadow: {
         'rebel': 'var(--shadow-rebel)',
@@ -101,6 +130,22 @@ export default {
           from: { transform: "translateY(30px)", opacity: "0" },
           to: { transform: "translateY(0)", opacity: "1" },
         },
+        "slide-in-left": {
+          from: { transform: "translateX(-100%)", opacity: "0" },
+          to: { transform: "translateX(0)", opacity: "1" },
+        },
+        "slide-in-right": {
+          from: { transform: "translateX(100%)", opacity: "0" },
+          to: { transform: "translateX(0)", opacity: "1" },
+        },
+        "fade-in": {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        "scale-in": {
+          from: { transform: "scale(0.95)", opacity: "0" },
+          to: { transform: "scale(1)", opacity: "1" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -109,6 +154,10 @@ export default {
         "slide-diagonal": "slide-diagonal 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
         "counter-up": "counter-up 0.6s ease-out",
         "fade-slide-up": "fade-slide-up 0.5s ease-out",
+        "slide-in-left": "slide-in-left 0.3s ease-out",
+        "slide-in-right": "slide-in-right 0.3s ease-out", 
+        "fade-in": "fade-in 0.2s ease-out",
+        "scale-in": "scale-in 0.2s ease-out",
       },
     },
   },

@@ -62,13 +62,23 @@
     --transition-rebel: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: all 0.15s ease-out;
     
-    /* TYPOGRAPHY SCALES */
-    --font-size-hero: clamp(4rem, 10vw, 8rem);
-    --font-size-title: clamp(2.5rem, 6vw, 5rem);
-    --font-size-subtitle: clamp(1.25rem, 3vw, 2rem);
-    --font-size-body: clamp(1rem, 2vw, 1.25rem);
-    --letter-spacing-wide: 0.1em;
-    --letter-spacing-wider: 0.15em;
+  /* ENHANCED TYPOGRAPHY SCALES - FLUID & RESPONSIVE */
+  --font-size-hero: clamp(3rem, 8vw + 1rem, 8rem);
+  --font-size-title: clamp(2rem, 5vw + 0.5rem, 5rem);
+  --font-size-subtitle: clamp(1.125rem, 2.5vw + 0.5rem, 2rem);
+  --font-size-body: clamp(0.875rem, 1.5vw + 0.25rem, 1.25rem);
+  --font-size-small: clamp(0.75rem, 1vw + 0.25rem, 1rem);
+  --letter-spacing-wide: 0.1em;
+  --letter-spacing-wider: 0.15em;
+  
+  /* RESPONSIVE SPACING SYSTEM */
+  --space-xs: clamp(0.25rem, 0.5vw, 0.5rem);
+  --space-sm: clamp(0.5rem, 1vw, 1rem);
+  --space-md: clamp(1rem, 2vw, 1.5rem);
+  --space-lg: clamp(1.5rem, 3vw, 2.5rem);
+  --space-xl: clamp(2rem, 4vw, 3rem);
+  --space-2xl: clamp(3rem, 6vw, 5rem);
+  --space-3xl: clamp(4rem, 8vw, 6rem);
   }
 
   /* LIGHT MODE OVERRIDE (Optional - primarily dark theme) */
@@ -126,33 +136,47 @@
   .space-2xl { margin: 3rem; }   /* 48px */
   .space-3xl { margin: 4rem; }   /* 64px */
 
-  /* PROFESSIONAL TYPOGRAPHY SCALE */
+  /* ENHANCED RESPONSIVE TYPOGRAPHY SYSTEM */
   .text-hero { 
-    font-size: clamp(2.5rem, 5vw, 4.5rem); 
+    font-size: var(--font-size-hero);
     line-height: 1.1; 
     letter-spacing: -0.02em;
     font-weight: 900;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
   .text-title { 
-    font-size: clamp(1.75rem, 3.5vw, 3rem); 
-    line-height: 1.1; 
+    font-size: var(--font-size-title);
+    line-height: 1.15; 
     letter-spacing: -0.01em;
     font-weight: 800;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
   .text-subtitle { 
-    font-size: clamp(1.25rem, 2.5vw, 2rem); 
+    font-size: var(--font-size-subtitle);
     line-height: 1.3; 
     letter-spacing: 0.01em;
     font-weight: 600;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
   .text-body { 
-    font-size: clamp(1rem, 1.5vw, 1.125rem); 
+    font-size: var(--font-size-body);
     line-height: 1.6; 
     letter-spacing: 0.01em;
     font-weight: 400;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  .text-small { 
+    font-size: var(--font-size-small);
+    line-height: 1.5; 
+    letter-spacing: 0.02em;
+    font-weight: 500;
   }
 
-  /* RESPONSIVE SLIDE LAYOUTS */
+  /* ENHANCED RESPONSIVE SLIDE LAYOUTS */
   .slide-container {
     width: 100vw;
     height: 100vh;
@@ -162,16 +186,17 @@
     justify-content: center;
     position: relative;
     overflow: hidden;
-    padding: clamp(0.75rem, 3vw, 2rem);
+    padding: var(--space-sm);
     background: hsl(var(--background));
+    contain: layout style paint;
   }
 
   .slide-content {
     width: 100%;
-    max-width: min(95%, 1400px);
+    max-width: min(96%, 1400px);
     height: 100%;
-    max-height: calc(90vh - 2rem);
-    max-height: calc(calc(var(--vh, 1vh) * 90) - 2rem);
+    max-height: calc(100vh - var(--space-lg));
+    max-height: calc(100dvh - var(--space-lg));
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -179,6 +204,7 @@
     position: relative;
     z-index: 10;
     overflow: hidden;
+    padding: var(--space-xs);
   }
 
   /* RESPONSIVE CONTAINER SYSTEM */
@@ -364,13 +390,72 @@
     font-size: clamp(0.875rem, 1.5vw, 1rem);
   }
   
-  /* CHAT BUBBLE STYLES */
+  /* ENHANCED CHAT BUBBLE STYLES */
   .chat-human {
     @apply bg-destructive/20 border-destructive/50 text-destructive-foreground;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
   
   .chat-eva {
     @apply bg-primary/20 border-primary/50 text-primary-foreground;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* SCROLLBAR UTILITIES */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted));
+    border-radius: 3px;
+  }
+
+  /* PERFORMANCE OPTIMIZATIONS */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform;
+  }
+
+  /* ACCESSIBILITY IMPROVEMENTS */
+  .focus-visible-outline {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
+  }
+
+  /* REDUCED MOTION SUPPORT */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+    
+    .animate-pulse-glow,
+    .animate-pulse {
+      animation: none !important;
+    }
   }
 }
 
@@ -476,28 +561,59 @@
     @apply bg-primary text-primary-foreground;
   }
   
-  /* MOBILE OPTIMIZATIONS */
-  @media (max-width: 768px) {
+  /* ENHANCED MOBILE & TABLET OPTIMIZATIONS */
+  @media (max-width: 480px) {
     .slide-container {
-      padding: clamp(0.75rem, 3vw, 1.5rem);
+      padding: var(--space-xs);
       min-height: 100dvh;
     }
     
     .slide-content {
-      max-height: calc(100dvh - 6rem);
-      padding: clamp(0.5rem, 2vw, 1rem);
+      max-height: calc(100dvh - var(--space-md));
+      padding: var(--space-xs);
     }
 
+    /* Ultra-compact mobile text scaling */
+    .text-hero { font-size: clamp(2.5rem, 12vw, 4rem) !important; }
+    .text-title { font-size: clamp(1.75rem, 8vw, 2.75rem) !important; }
+    .text-subtitle { font-size: clamp(1rem, 5vw, 1.5rem) !important; }
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    .slide-container {
+      padding: var(--space-sm);
+      min-height: 100dvh;
+    }
+    
+    .slide-content {
+      max-height: calc(100dvh - var(--space-lg));
+      padding: var(--space-sm);
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .slide-container {
+      padding: var(--space-md);
+    }
+    
+    .slide-content {
+      max-height: calc(100dvh - var(--space-xl));
+      padding: var(--space-md);
+    }
+  }
+
+  @media (max-width: 768px) {
     /* Responsive Chat Containers */
     .conversation-chat {
-      min-height: 200px !important;
-      max-height: 40vh !important;
+      min-height: 180px !important;
+      max-height: 35vh !important;
       overflow-y: auto !important;
+      scrollbar-width: thin;
     }
 
     /* Decision Tree Mobile Layout */
     .decision-tree {
-      gap: 0.75rem !important;
+      gap: var(--space-xs) !important;
       grid-template-columns: 1fr !important;
     }
 
