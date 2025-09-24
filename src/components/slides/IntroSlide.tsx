@@ -1,5 +1,6 @@
 import React from 'react';
 import { Users, TrendingUp, Target, CheckCircle } from 'lucide-react';
+import { SlideWrapper } from '@/components/SlideWrapper';
 
 const IntroSlide: React.FC = () => {
   const stats = [
@@ -33,7 +34,7 @@ const IntroSlide: React.FC = () => {
   ];
 
   return (
-    <div className="slide-container">
+    <SlideWrapper>
       <div className="slide-content">
         <div className="intro-grid">
           {/* Hero Section */}
@@ -109,7 +110,7 @@ const IntroSlide: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </SlideWrapper>
   );
 };
 

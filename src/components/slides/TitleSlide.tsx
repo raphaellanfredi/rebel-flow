@@ -1,9 +1,10 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { SlideWrapper } from '@/components/SlideWrapper';
 
 const TitleSlide: React.FC = () => {
   return (
-    <div className="slide-container diagonal-lines">
+    <SlideWrapper className="diagonal-lines">
       <div className="slide-content relative">
         {/* Content Centralizado */}
         <div className="text-center space-y-8 animate-fade-slide-up">
@@ -34,7 +35,7 @@ const TitleSlide: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </SlideWrapper>
   );
 };
 

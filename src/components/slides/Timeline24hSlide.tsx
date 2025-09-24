@@ -1,11 +1,12 @@
 import React from 'react';
+import { SlideWrapper } from '@/components/SlideWrapper';
 
 const Timeline24hSlide: React.FC = () => {
   const salesHours = [1, 3, 6, 8, 10, 12, 14, 16, 18, 19, 21, 22, 23]; // EVA: 24/7 sales opportunities (13 total)
   const competitorHours = [9, 11, 14, 15, 16, 17]; // Concorrência: business hours only (6 total)
 
   return (
-    <div className="slide-container">
+    <SlideWrapper>
       <div className="slide-content">
         <div className="text-center mb-16">
           <h1 className="text-title font-black text-neon-red uppercase">
@@ -147,7 +148,7 @@ const Timeline24hSlide: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </SlideWrapper>
   );
 };
 
